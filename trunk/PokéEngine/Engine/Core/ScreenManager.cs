@@ -22,8 +22,8 @@ namespace Pokemon.Core
         {
         }
 
-        public Viewport BottomViewPort { get; set; }
-        public Viewport TopViewPort { get; set; }
+        public Viewport GameViewPort { get; set; }
+        public Viewport TouchViewPort { get; set; }
 
         public SpriteBatch SpriteBatch { get; private set; }
 
@@ -149,8 +149,8 @@ namespace Pokemon.Core
             SpriteBatch.Begin();
 
             SpriteBatch.Draw(_blankTexture,
-                              new Rectangle(0, 0, viewport.Width, viewport.Height),
-                              Color.Black * alpha);
+                             new Rectangle(0, 0, viewport.Width, viewport.Height),
+                             Color.Black * alpha);
 
             SpriteBatch.End();
         }
