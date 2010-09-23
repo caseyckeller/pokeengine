@@ -30,8 +30,8 @@ namespace Pokemon
 
             _screenManager = new ScreenManager(this)
                                  {
-                                     TopViewPort = new Viewport(0, 0, 512, 384),
-                                     BottomViewPort = new Viewport(0, 384, 512, 384)
+                                     GameViewPort = new Viewport(0, 0, 512, 384),
+                                     TouchViewPort = new Viewport(0, 384, 512, 384)
                                  };
 
             _screenManager.AddScreen(new TouchScreen());

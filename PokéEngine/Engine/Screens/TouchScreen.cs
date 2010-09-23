@@ -14,8 +14,6 @@ namespace Pokemon.Screens
 
         public TouchScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(0);
-            TransitionOffTime = TimeSpan.FromSeconds(0);
         }
 
         public override void LoadContent()
@@ -56,13 +54,14 @@ namespace Pokemon.Screens
 
         public override void Draw(GameTime gameTime)
         {
-            Viewport viewport = ScreenManager.BottomViewPort;
+            GraphicsDevice graphicsDevice = ScreenManager.Game.GraphicsDevice;
+            Viewport viewport = ScreenManager.TouchViewPort;
+            graphicsDevice.Viewport = viewport;
 
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
             spriteBatch.Begin();
-
-            spriteBatch.Draw(_texture2D, new Rectangle(viewport.X, viewport.Y, viewport.Width, viewport.Height),
+            spriteBatch.Draw(_texture2D, new Rectangle(0, 0, viewport.Width, viewport.Height),
                              Color.White);
             spriteBatch.End();
         }

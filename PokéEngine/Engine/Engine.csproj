@@ -111,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Camera2D.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Core\InputState.cs" />
     <Compile Include="Core\ScreenManager.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Screens\TouchScreen.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\game.xml" />
     <Content Include="Config\input.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
