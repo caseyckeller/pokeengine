@@ -55,7 +55,7 @@ namespace Pokemon.Screens
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice graphicsDevice = ScreenManager.Game.GraphicsDevice;
-            Viewport viewport = ScreenManager.TouchViewPort;
+            Viewport viewport = ScreenManager.Viewports["Touch"];
             graphicsDevice.Viewport = viewport;
 
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;

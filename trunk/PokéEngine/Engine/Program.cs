@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Xml.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Pokemon.Core;
@@ -17,26 +20,40 @@ namespace Pokemon
 
         public Pokemon()
         {
+            XDocument xDocument = XDocument.Load("Config/game.xml");
+            XElement setting = xDocument.Descendants("Settings").Single();
+
             Content.RootDirectory = "Content";
 
             _graphics = new GraphicsDeviceManager(this)
                             {
-                                PreferredBackBufferWidth = 512,
-                                PreferredBackBufferHeight = 768,
+                                PreferredBackBufferWidth = Convert.ToInt32(setting.Element("Width").Value),
+                                PreferredBackBufferHeight = Convert.ToInt32(setting.Element("Height").Value),
                             };
 
-            IsMouseVisible = true;
-            Window.Title = "PokéEngine";
+            _screenManager = new ScreenManager(this);
 
-            _screenManager = new ScreenManager(this)
-                                 {
-                                     GameViewPort = new Viewport(0, 0, 512, 384),
-                                     TouchViewPort = new Viewport(0, 384, 512, 384)
-                                 };
+            var viewports = from viewport in setting.Descendants("Viewport")
+                            select new
+                                       {
+                                           Name = viewport.Element("Name").Value,
+                                           X = Convert.ToInt32(viewport.Element("X").Value),
+                                           Y = Convert.ToInt32(viewport.Element("Y").Value),
+                                           Width = Convert.ToInt32(viewport.Element("Width").Value),
+                                           Height = Convert.ToInt32(viewport.Element("Height").Value),
+                                       };
+
+            foreach (var viewport in viewports)
+                _screenManager.Viewports.Add(viewport.Name,
+                                             new Viewport(viewport.X, viewport.Y, viewport.Width, viewport.Height));
 
             _screenManager.AddScreen(new TouchScreen());
             _screenManager.AddScreen(new OverworldScreen());
+
             Components.Add(_screenManager);
+
+            IsMouseVisible = true;
+            Window.Title = setting.Element("Title").Value;
         }
 
         protected override void LoadContent()

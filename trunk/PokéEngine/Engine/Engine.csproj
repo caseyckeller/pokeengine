@@ -121,9 +121,13 @@
     <Compile Include="Screens\TouchScreen.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\game.xml" />
+    <Content Include="Config\game.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\input.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Game.ico" />
   </ItemGroup>
