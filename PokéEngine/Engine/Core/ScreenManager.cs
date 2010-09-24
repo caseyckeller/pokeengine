@@ -13,6 +13,7 @@ namespace Pokemon.Core
         private readonly InputState _input = new InputState();
         private readonly List<GameScreen> _screens = new List<GameScreen>();
         private readonly List<GameScreen> _screensToUpdate = new List<GameScreen>();
+        private readonly Dictionary<string, Viewport> _viewports = new Dictionary<string, Viewport>();
         private Texture2D _blankTexture;
         private bool _isInitialized;
         private bool _traceEnabled;
@@ -22,8 +23,10 @@ namespace Pokemon.Core
         {
         }
 
-        public Viewport GameViewPort { get; set; }
-        public Viewport TouchViewPort { get; set; }
+        public Dictionary<string, Viewport> Viewports
+        {
+            get { return _viewports; }
+        }
 
         public SpriteBatch SpriteBatch { get; private set; }
 
