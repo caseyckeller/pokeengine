@@ -99,6 +99,8 @@ Namespace NetCode
     ''' </summary>
     ''' <remarks></remarks>
     Public Class Net
+        Implements IDisposable
+
 
 #Region "Properties"
 
@@ -183,6 +185,7 @@ Namespace NetCode
             Dim client As Sockets.TcpClient = _listener.EndAcceptTcpClient(ir)
             _connector = client
             'No longer listening
+            _listener.Server.Close()
             _listening = False
             'Call the Connection Established Sub
             Me.OnConnectionEstablished()
@@ -194,8 +197,23 @@ Namespace NetCode
         ''' <param name="ir">The result.</param>
         ''' <remarks></remarks>
         Protected Overridable Sub OnSafeDisconnect(ByVal ir As IAsyncResult)
+            'Kill the thread.
             _readerThread.Abort()
+
+            'Raise the Connection Closed Event.
             RaiseEvent ConnectionClosed()
+
+            'We are no longer connected!
+            _connected = False
+            _connecting = False
+
+            'Stop the listener if listening.
+            If Listening Then _listener.Server.Close()
+            _listening = False
+
+            'Close the connector.
+            _connector.Client.Close()
+
         End Sub
 
         ''' <summary>
@@ -205,14 +223,20 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Protected Overridable Sub OnConnectionEstablished()
+
             'We are now connected.
             _connected = True
+
             'No longer in a connection attempt.
             _connecting = False
+
             'Raise the Connection Established event.
             RaiseEvent ConnectionEstablished()
+
             'Start the reader.
+            _readerThread = New Threading.Thread(AddressOf MessageListener) With {.IsBackground = True}
             _readerThread.Start()
+
         End Sub
 
         ''' <summary>
@@ -223,9 +247,23 @@ Namespace NetCode
         ''' <param name="exception">The Exception that is passed up.</param>
         ''' <remarks></remarks>
         Protected Overridable Sub OnConnectionError(ByVal exception As Exception)
+
             'Stop the reader thread.
             _readerThread.Abort()
+
+            'Raise the exception
             RaiseEvent ConnectionError(exception)
+
+            'Not connected to much of anything.
+            _connected = False
+
+            'Stop listening
+            If Listening Then _listener.Server.Close()
+            _listening = False
+
+            'Close the connector
+            _connector.Client.Close()
+
         End Sub
 
         ''' <summary>
@@ -256,7 +294,7 @@ Namespace NetCode
         Private _ip As String = String.Empty
         Private _connector As Sockets.TcpClient
         Private _listener As Sockets.TcpListener
-        Private _readerThread As New System.Threading.Thread(AddressOf MessageListener)
+        Private _readerThread As New System.Threading.Thread(AddressOf MessageListener) With {.IsBackground = True}
 
 #End Region
 
@@ -280,8 +318,13 @@ Namespace NetCode
                 _listening = True
                 'Create the Listener.
                 _listener = New Sockets.TcpListener(System.Net.IPAddress.Any, Me.Port)
+                'Start the Listener.
+                _listener.Start()
                 'Create the Async acceptor.
                 _listener.BeginAcceptTcpClient(New AsyncCallback(AddressOf Me.OnIncomingConnectionAttempt), _listener)
+            Else
+                'Debug line.
+                Debug.WriteLine(String.Format("Listening: {0}, Connected: {0}, Connecting: {0}", Me.Listening, Me.Connected, Me.Connecting))
             End If
         End Sub
 
@@ -315,6 +358,8 @@ Namespace NetCode
                 _connecting = True
                 'Begin a connection.
                 _connector.BeginConnect(_ip, Me.Port, New AsyncCallback(AddressOf Me.OnConnectionAttempt), Nothing)
+            Else
+                Debug.WriteLine("Connection attempt denied")
             End If
         End Sub
 
@@ -322,10 +367,11 @@ Namespace NetCode
         ''' Safely disconnects from another NetCode Library.
         ''' </summary>
         ''' <remarks></remarks>
-        Public Sub [Disconnect]()
+        Public Sub [Disconnect](Optional ByVal SendRequest As Boolean = True)
             'Make sure we are connected.
             If Me.Connected Then
                 'Start a disconnection request.
+                If SendRequest Then Me.ObjectSender(New InternalStructure With {.Disconnect = True})
                 _connector.Client.BeginDisconnect(False, New AsyncCallback(AddressOf Me.OnSafeDisconnect), Nothing)
             End If
         End Sub
@@ -369,13 +415,15 @@ Namespace NetCode
                     tr.Start(obj)
                 Catch se As Sockets.SocketException
                     'The socket has closed, raise an error.
-                    RaiseEvent ConnectionError(se)
-                    Exit Do
+                    Me.OnConnectionError(se)
+                    'Exit Do
                 Catch se As Runtime.Serialization.SerializationException
                     'Could be some bad data, raise an error.
-                    RaiseEvent ConnectionError(se)
+                    Me.OnConnectionError(se)
+                    'Exit Do
                 Catch tae As Threading.ThreadAbortException
-                    'Thread was being aborted, discard information.
+                    'Me.OnConnectionError(tae)
+                    Exit Do
                 End Try
             Loop
         End Sub
@@ -386,11 +434,59 @@ Namespace NetCode
         ''' <param name="obj">The object to pass up.</param>
         ''' <remarks></remarks>
         Private Sub MessageHandler(ByVal obj As Object)
-            Call Me.OnIncomingMessage(obj)
+            'If we got an internal message, handle it.
+            If obj.GetType Is GetType(InternalStructure) Then
+                'It's a disconnect request, do the disconnect dance.
+                If CType(obj, InternalStructure).Disconnect Then Me.Disconnect(False)
+            Else
+                'It's not internal, raise event.
+                Call Me.OnIncomingMessage(obj)
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Sends a binary chunk across the stream.
+        ''' </summary>
+        ''' <param name="obj">The object to serialize and send.</param>
+        ''' <remarks></remarks>
+        Public Sub ObjectSender(ByVal obj As Object)
+            'Lock the stream
+            If Connected Then
+                Try
+                    SyncLock _connector.GetStream
+                        'Create the serializer.
+                        Dim BS As New Binary.BinaryFormatter
+                        'Send the data.
+                        BS.Serialize(_connector.GetStream, obj)
+                    End SyncLock
+                Catch ex As IO.IOException
+                    Me.OnConnectionError(ex)
+                End Try
+            End If
         End Sub
 
 #End Region
 
+        ''' <summary>
+        ''' Disposes of the NetCode Library and all the allotted resources.
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub Dispose() Implements IDisposable.Dispose
+            _listening = Nothing
+            _connecting = Nothing
+            _connected = Nothing
+            _ip = Nothing
+            _connector.Client.Close()
+            _connector.Close()
+            _listener.Server.Close()
+            _readerThread.Abort()
+        End Sub
+
+        <Serializable()> _
+        Public Structure InternalStructure
+            Public Property Disconnect As Boolean
+        End Structure
+        
     End Class
 
 End Namespace
