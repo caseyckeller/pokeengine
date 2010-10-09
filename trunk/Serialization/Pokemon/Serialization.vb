@@ -2,95 +2,8 @@
 Imports System.Xml.Serialization
 Imports System.IO
 Imports System.Net
+Imports System.Net.Sockets
 Imports System.Text.RegularExpressions
-
-Namespace GameData
-
-    ''' <summary>
-    ''' Serialization class, need to test.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Class Serialization
-
-        ''' <summary>
-        ''' Saves a Trainer.
-        ''' </summary>
-        ''' <param name="trainer">The Trainer Data to save.</param>
-        ''' <param name="location">The FOLDER where the save file is to be placed.</param>
-        ''' <remarks></remarks>
-        Public Sub SaveTrainer(ByVal trainer As Trainer, ByVal location As String)
-
-            'Create Serializer, of the type Trainer.
-            Dim Saver As New Binary.BinaryFormatter
-
-            'Check the directory.
-            If Directory.Exists(location) Then
-                'Save the file
-                Saver.Serialize(New FileStream(Path.Combine(
-                                       location,
-                                       String.Format("{0}.tr", trainer.TrainerName)),
-                                       IO.FileMode.Create,
-                                       IO.FileAccess.ReadWrite),
-                                       trainer)
-            End If
-        End Sub
-
-        ''' <summary>
-        ''' Loads a Trainer into a Trainer Object.
-        ''' </summary>
-        ''' <param name="trainer">The trainer to load into.</param>
-        ''' <param name="location">The location of the trainer file.</param>
-        ''' <remarks></remarks>
-        Public Sub LoadTrainer(ByRef trainer As Trainer, ByVal location As String)
-            If File.Exists(location) Then
-
-                Dim Loader As New Binary.BinaryFormatter
-                trainer = CType(Loader.Deserialize(New FileStream(location, IO.FileMode.Open)), Trainer)
-
-            End If
-        End Sub
-
-    End Class
-
-    ''' <summary>
-    ''' Trainer Class, still need to fill this in.
-    ''' </summary>
-    ''' <remarks></remarks>
-    <Serializable()> Public Class Trainer
-
-        Public Property TrainerName As String = String.Empty
-
-        Public Property ID As Integer = 0I
-
-        Public Property SID As Integer = 0I
-
-        Public PartyPokemon As New List(Of Pokemon)
-
-        Public Property PokemonBoxes As New List(Of Boxes) With {.Capacity = 30I}
-
-    End Class
-
-    ''' <summary>
-    ''' PC Box class, still need to do this!
-    ''' </summary>
-    ''' <remarks></remarks>
-    <Serializable()> Public Class Boxes
-
-        Public Property Name As String = String.Empty
-
-        Public Property Pokemon As List(Of Pokemon)
-
-    End Class
-
-    ''' <summary>
-    ''' Generic Pokemon class, still need to do this!
-    ''' </summary>
-    ''' <remarks></remarks>
-    <Serializable()> Public Class Pokemon
-        Public Property Name As String = String.Empty
-    End Class
-
-End Namespace
 
 Namespace NetCode
 
@@ -103,6 +16,18 @@ Namespace NetCode
 
 
 #Region "Properties"
+
+        ''' <summary>
+        ''' Returns if the NetCode has been disposed.
+        ''' </summary>
+        ''' <value>Boolean variable based on _disposed.</value>
+        ''' <returns>A True or False Boolean value.</returns>
+        ''' <remarks>Use this to check to see if the class is labeled as "disposed"</remarks>
+        Private ReadOnly Property Disposed As Boolean
+            Get
+                Return _disposed
+            End Get
+        End Property
 
         ''' <summary>
         ''' Returns if the system has an established connection or not.
@@ -122,7 +47,7 @@ Namespace NetCode
         ''' <value>Based on the internal boolean variable _connecting.</value>
         ''' <returns>A True or False Boolean value.</returns>
         ''' <remarks>Use this when attempting to connect. It is called internally as well.</remarks>
-        Public ReadOnly Property Connecting As Boolean
+        Public ReadOnly Property IsConnecting As Boolean
             Get
                 Return _connecting
             End Get
@@ -134,7 +59,7 @@ Namespace NetCode
         ''' <value>A True or False Boolean Value.</value>
         ''' <returns>If the netcode is waiting or not.</returns>
         ''' <remarks></remarks>
-        Public ReadOnly Property Listening As Boolean
+        Public ReadOnly Property IsListening As Boolean
             Get
                 Return _listening
             End Get
@@ -157,6 +82,14 @@ Namespace NetCode
 #Region "Overridable Subs"
 
         ''' <summary>
+        ''' This sub is called whenever the system starts listening.
+        ''' </summary>
+        ''' <remarks></remarks>
+        Protected Overridable Sub OnListening()
+            RaiseEvent Listening(Me)
+        End Sub
+
+        ''' <summary>
         ''' The Sub is called when a connection attempt has been completed.
         ''' It is determined here if the connection attempt was completed
         ''' successfully or if there was a connection error.
@@ -172,6 +105,7 @@ Namespace NetCode
             Else
                 'There is no connection, throw an error.
                 Dim Exception As New System.Net.ProtocolViolationException(String.Format("The Connection to IP Address '{0}' has failed!", _ip))
+                Me.OnConnectionError(Exception)
             End If
         End Sub
 
@@ -201,14 +135,14 @@ Namespace NetCode
             _readerThread.Abort()
 
             'Raise the Connection Closed Event.
-            RaiseEvent ConnectionClosed()
+            RaiseEvent ConnectionClosed(Me)
 
             'We are no longer connected!
             _connected = False
             _connecting = False
 
             'Stop the listener if listening.
-            If Listening Then _listener.Server.Close()
+            If IsListening Then _listener.Server.Close()
             _listening = False
 
             'Close the connector.
@@ -231,7 +165,7 @@ Namespace NetCode
             _connecting = False
 
             'Raise the Connection Established event.
-            RaiseEvent ConnectionEstablished()
+            RaiseEvent ConnectionEstablished(Me)
 
             'Start the reader.
             _readerThread = New Threading.Thread(AddressOf MessageListener) With {.IsBackground = True}
@@ -252,13 +186,13 @@ Namespace NetCode
             _readerThread.Abort()
 
             'Raise the exception
-            RaiseEvent ConnectionError(exception)
+            RaiseEvent ConnectionError(Me, exception)
 
             'Not connected to much of anything.
             _connected = False
 
             'Stop listening
-            If Listening Then _listener.Server.Close()
+            If IsListening Then _listener.Server.Close()
             _listening = False
 
             'Close the connector
@@ -272,22 +206,24 @@ Namespace NetCode
         ''' <param name="message">The Object received over the stream.</param>
         ''' <remarks></remarks>
         Protected Overridable Sub OnIncomingMessage(ByVal message As Object)
-            RaiseEvent IncomingMessage(message)
+            RaiseEvent IncomingMessage(Me, message)
         End Sub
 
 #End Region
 
 #Region "Events"
 
-        Public Event ConnectionEstablished()
-        Public Event ConnectionError(ByVal exception As Exception)
-        Public Event ConnectionClosed()
-        Public Event IncomingMessage(ByVal message As Object)
+        Public Event ConnectionEstablished(ByVal sender As Object)
+        Public Event ConnectionError(ByVal sender As Object, ByVal exception As Exception)
+        Public Event ConnectionClosed(ByVal sender As Object)
+        Public Event IncomingMessage(ByVal sender As Object, ByVal message As Object)
+        Public Event Listening(ByVal sender As Object)
 
 #End Region
 
 #Region "Variables"
 
+        Private _disposed As Boolean = False
         Private _listening As Boolean = False
         Private _connecting As Boolean = False
         Private _connected As Boolean = False
@@ -312,19 +248,25 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub [Listen]()
+            'Check to see if we're disposed
+            If Disposed Then
+                Throw New ObjectDisposedException("NetCode.Net", "You cannot access a disposed object!")
+            End If
             'If we are not listening already, connected to someone else, or in the process of connecting.
-            If Not Me.Listening AndAlso Not Me.Connected AndAlso Not Me.Connecting Then
+            If Not Me.IsListening AndAlso Not Me.Connected AndAlso Not Me.IsConnecting Then
                 'Set that we are listening.
                 _listening = True
                 'Create the Listener.
                 _listener = New Sockets.TcpListener(System.Net.IPAddress.Any, Me.Port)
                 'Start the Listener.
                 _listener.Start()
+                'Raise the event.
+                Me.OnListening()
                 'Create the Async acceptor.
                 _listener.BeginAcceptTcpClient(New AsyncCallback(AddressOf Me.OnIncomingConnectionAttempt), _listener)
             Else
                 'Debug line.
-                Debug.WriteLine(String.Format("Listening: {0}, Connected: {0}, Connecting: {0}", Me.Listening, Me.Connected, Me.Connecting))
+                Debug.WriteLine(String.Format("Listening: {0}, Connected: {0}, Connecting: {0}", Me.IsListening, Me.Connected, Me.IsConnecting))
             End If
         End Sub
 
@@ -333,8 +275,12 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub [StopListen]()
+            'Check to see if we're disposed
+            If Disposed Then
+                Throw New ObjectDisposedException("NetCode.Net", "You cannot access a disposed object!")
+            End If
             'If the listener is active.
-            If Me.Listening Then
+            If Me.IsListening Then
                 'Set to false.
                 _listening = False
                 'Close it.
@@ -348,8 +294,12 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub [Connect](ByVal IP As String)
+            'Check to see if we're disposed
+            If Disposed Then
+                Throw New ObjectDisposedException("NetCode.Net", "You cannot access a disposed object!")
+            End If
             'If we aren't in a connection attempt, not connected, and that the IP is valid.
-            If Not Me.Connecting AndAlso Not Me.Connected AndAlso Me.IsIPv4(IP) AndAlso Not Me.Listening Then
+            If Not Me.IsConnecting AndAlso Not Me.Connected AndAlso Me.IsIPv4(IP) AndAlso Not Me.IsListening Then
                 'Create a new Client
                 _connector = New Sockets.TcpClient()
                 'Set the internal IP
@@ -358,8 +308,8 @@ Namespace NetCode
                 _connecting = True
                 'Begin a connection.
                 _connector.BeginConnect(_ip, Me.Port, New AsyncCallback(AddressOf Me.OnConnectionAttempt), Nothing)
-            Else
-                Debug.WriteLine("Connection attempt denied")
+            ElseIf Not Me.IsIPv4(IP) Then
+                Throw New NetCode.NetException(Environment.StackTrace, String.Format("The IP address provided ({0}) is not valid!", IP))
             End If
         End Sub
 
@@ -368,6 +318,10 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub [Disconnect](Optional ByVal SendRequest As Boolean = True)
+            'Check to see if we're disposed
+            If Disposed Then
+                Throw New ObjectDisposedException("NetCode.Net", "You cannot access a disposed object!")
+            End If
             'Make sure we are connected.
             If Me.Connected Then
                 'Start a disconnection request.
@@ -405,7 +359,7 @@ Namespace NetCode
         ''' </summary>
         ''' <remarks></remarks>
         Private Sub MessageListener()
-            Do
+            Do While Not Disposed
                 Try
                     'Read the stream.
                     Dim obj As Object = New Binary.BinaryFormatter().Deserialize(_connector.GetStream)
@@ -451,7 +405,7 @@ Namespace NetCode
         ''' <remarks></remarks>
         Public Sub ObjectSender(ByVal obj As Object)
             'Lock the stream
-            If Connected Then
+            If Connected AndAlso Not Disposed Then
                 Try
                     SyncLock _connector.GetStream
                         'Create the serializer.
@@ -462,31 +416,222 @@ Namespace NetCode
                 Catch ex As IO.IOException
                     Me.OnConnectionError(ex)
                 End Try
+            ElseIf Disposed Then
+                Throw New ObjectDisposedException("NetCode.Net", "You cannot access a disposed object!")
             End If
         End Sub
-
-#End Region
 
         ''' <summary>
         ''' Disposes of the NetCode Library and all the allotted resources.
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub Dispose() Implements IDisposable.Dispose
-            _listening = Nothing
-            _connecting = Nothing
-            _connected = Nothing
-            _ip = Nothing
-            _connector.Client.Close()
-            _connector.Close()
-            _listener.Server.Close()
-            _readerThread.Abort()
+            If Not Disposed Then
+                GC.SuppressFinalize(Me)
+                _listening = Nothing
+                _connecting = Nothing
+                _connected = Nothing
+                _ip = Nothing
+                _connector.Client.Close()
+                _connector.Close()
+                _listener.Server.Close()
+                _readerThread.Abort()
+                _disposed = True
+                GC.Collect()
+            End If
         End Sub
 
+        ''' <summary>
+        ''' Returns the String Representation of the connection.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Overrides Function ToString() As String
+
+            'If we're connected, return that we are connected and to what IP.
+            If Connected Then
+                Return String.Format("Connected to IP: {0}", GetIPFromClient(Me._connector))
+            End If
+
+            'If we're listening, return that we're waiting for an incoming connection.
+            If IsListening Then
+                Return String.Format("Waiting for an incoming connection.")
+            End If
+
+            'If, in the rare event, we're doing a connection attempt and a .ToString() is called, I want this covered as well
+            If IsConnecting Then
+                Return String.Format("Attempting to connect...")
+            End If
+
+            'If none of the above conditions are satisfied, do this.
+            Return "System.NetCode.Net Class, waiting for instructions."
+
+        End Function
+
+        ''' <summary>
+        ''' Internal data struture used for the NetCode system.
+        ''' </summary>
+        ''' <remarks></remarks>
         <Serializable()> _
-        Public Structure InternalStructure
+        Private Structure InternalStructure
             Public Property Disconnect As Boolean
         End Structure
-        
+
+        ''' <summary>
+        ''' Returns the IP address of the client passed to it.
+        ''' </summary>
+        ''' <param name="client">The Sockets.TcpClient to retrieve the IP address from.</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function GetIPFromClient(ByRef client As Sockets.TcpClient) As String
+            Dim ipend As IPEndPoint = CType(client.Client.RemoteEndPoint, IPEndPoint)
+            If Not ipend Is Nothing Then Return ipend.Address.ToString Else Return String.Empty
+        End Function
+
+#End Region
+
+    End Class
+
+    ''' <summary>
+    ''' Exception class.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Class NetException
+        Inherits Exception
+
+        Private _stackTrace As String = String.Empty
+        Private _error As String = String.Empty
+
+        ''' <summary>
+        ''' Returns the StackTrace of the exception.
+        ''' </summary>
+        ''' <value></value>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Overloads ReadOnly Property StackTrace As String
+            Get
+                Return _stackTrace
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Returns any supplied error message.
+        ''' </summary>
+        ''' <value></value>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public ReadOnly Property ErrorMessage As String
+            Get
+                Return _error
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Creates a New Instance of the NetException Class.
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub New()
+        End Sub
+
+        ''' <summary>
+        ''' Creates a New Instance of the NetException Class.
+        ''' </summary>
+        ''' <param name="Stack">The StackTrace.</param>
+        ''' <param name="ErrorMsg">Error Message.</param>
+        ''' <remarks></remarks>
+        Public Sub New(ByVal Stack As String, ByVal ErrorMsg As String)
+            _stackTrace = Stack
+            _error = ErrorMsg
+        End Sub
+
+        ''' <summary>
+        ''' Returns the String representation of the NetCode.NetException Class.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Overrides Function ToString() As String
+            Return String.Format("NetCode Exception: {0}{1}{2}", ErrorMessage, Environment.NewLine, StackTrace)
+        End Function
+
+    End Class
+
+End Namespace
+
+Namespace Systems
+
+    ''' <summary>
+    ''' The battling class!
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Class Battling
+        Private WithEvents _opponent As New NetCode.Net()
+        Private OpponentData As BattleData
+
+
+#Region "Properties"
+
+        ''' <summary>
+        ''' Returns if this battle class has an active connection.
+        ''' </summary>
+        ''' <value></value>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public ReadOnly Property Active As Boolean
+            Get
+                Return _opponent.Connected
+            End Get
+        End Property
+
+#End Region
+
+        ''' <summary>
+        ''' Internal Battle Data structure.
+        ''' </summary>
+        ''' <remarks></remarks>
+        Private Structure BattleData
+
+        End Structure
+
+        ''' <summary>
+        ''' Creates a new instance of the Battling System.
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub New()
+        End Sub
+
+        ''' <summary>
+        ''' Creates a new instance of the Battling System with an already established connection.
+        ''' </summary>
+        ''' <param name="Opponent"></param>
+        ''' <remarks></remarks>
+        Public Sub New(ByRef Opponent As NetCode.Net)
+            _opponent = Opponent
+        End Sub
+
+        Private Sub ConnectionClosed(ByVal sender As Object) Handles _opponent.ConnectionClosed
+
+        End Sub
+
+        Private Sub ConnectionError(ByVal sender As Object, ByVal exception As System.Exception) Handles _opponent.ConnectionError
+
+        End Sub
+
+        Private Sub ConnectionEstablished(ByVal sender As Object) Handles _opponent.ConnectionEstablished
+
+        End Sub
+
+        Private Sub IncomingMessage(ByVal sender As Object, ByVal message As Object) Handles _opponent.IncomingMessage
+
+        End Sub
+
+    End Class
+
+    ''' <summary>
+    ''' Trading class for trading between two people.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Class Trading
+
     End Class
 
 End Namespace
