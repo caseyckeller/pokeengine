@@ -18,7 +18,7 @@
         AddToListBox(ListBox1, "connection closed")
     End Sub
 
-    Private Sub c1_ConnectionError(ByVal exception As System.Exception) Handles c1.ConnectionError
+    Private Sub c1_ConnectionError(ByVal sender As Object, ByVal exception As System.Exception) Handles c1.ConnectionError
         AddToListBox(ListBox1, "connection error")
         AddToListBox(ListBox1, exception.ToString)
     End Sub
@@ -27,7 +27,7 @@
         AddToListBox(ListBox1, "connection established")
     End Sub
 
-    Private Sub c1_IncomingMessage(ByVal message As Object) Handles c1.IncomingMessage
+    Private Sub c1_IncomingMessage(ByVal sender As Object, ByVal message As Object) Handles c1.IncomingMessage
         AddToListBox(ListBox1, "message")
     End Sub
 #End Region
@@ -37,7 +37,7 @@
         AddToListBox(ListBox2, "connection closed")
     End Sub
 
-    Private Sub c2_ConnectionError(ByVal exception As System.Exception) Handles c2.ConnectionError
+    Private Sub c2_ConnectionError(ByVal sender As Object, ByVal exception As System.Exception) Handles c2.ConnectionError
         AddToListBox(ListBox2, "connection error")
         AddToListBox(ListBox2, exception.ToString)
     End Sub
@@ -46,7 +46,7 @@
         AddToListBox(ListBox2, "connection established")
     End Sub
 
-    Private Sub c2_IncomingMessage(ByVal message As Object) Handles c2.IncomingMessage
+    Private Sub c2_IncomingMessage(ByVal sender As Object, ByVal message As Object) Handles c2.IncomingMessage
         AddToListBox(ListBox2, "message")
     End Sub
 #End Region
@@ -72,6 +72,10 @@
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
         c2.ObjectSender("hlelo")
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        c1.Disconnect()
     End Sub
 
 End Class
