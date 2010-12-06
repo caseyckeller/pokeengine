@@ -1,0 +1,5 @@
+C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\bin\Debug\IAPL.exe
+C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\bin\Debug\IAPL.pdb
+C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Debug\IAPL.exe
+C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Debug\IAPL.pdb
