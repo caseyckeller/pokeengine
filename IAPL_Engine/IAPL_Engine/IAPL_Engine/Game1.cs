@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using IAPL.Pokemon_Library;
+using IAPL.Map;
 
 namespace IAPL_Engine
 {
@@ -18,7 +19,13 @@ namespace IAPL_Engine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
+        
+        
+        Zone map = new Zone(20, 15);
         Player player = new Player();
+
+        Texture2D grass;
+        Texture2D wall;
 
         public Game1()
         {
@@ -34,6 +41,11 @@ namespace IAPL_Engine
             graphics.PreferredBackBufferHeight = 480;
             //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
+            
+            //TEST
+            setMap(ref map);
+            player.setPlayerMap(ref map);
+            //TEST
 
             base.Initialize();
         }
@@ -47,6 +59,10 @@ namespace IAPL_Engine
             player.Texture = Content.Load<Texture2D>("debug_sprite_player");
 
             SetUpPlayer();
+            //Test
+            grass = Content.Load<Texture2D>("debug_grass_tile");
+            wall = Content.Load<Texture2D>("debug_wall_tile");
+            //TEST
 
         }
 
@@ -69,6 +85,7 @@ namespace IAPL_Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            DrawGround();
             DrawPlayer();
             DrawDebug();
             spriteBatch.End();
@@ -128,5 +145,51 @@ namespace IAPL_Engine
         {
             spriteBatch.Draw(player.Texture, player.Rect, Color.White);
         }
+         
+        //TEST
+        public void DrawGround()
+        {
+
+            for(int a = 0; a < 20; a++)
+            {
+                for (int b = 0; b < 15; b++)
+                {
+                    Rectangle place = new Rectangle(a * 32, (15*32) - (b * 32) -32, 32, 32);
+                    if (map.tile[a, b].isClear())
+                    {
+                        spriteBatch.Draw(grass, place, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(wall, place, Color.White);
+                    }
+                }
+            }
+        }
+
+        public static void setMap(ref Zone theMap)
+        {
+            for (int a = 5; a <= 15; a++)
+            {
+                for (int b = 5; b <= 10; b++)
+                {
+                    theMap.tile[a, b].setClear();
+                }
+            }
+            theMap.tile[4, 8].setClear();
+            theMap.tile[3, 8].setClear();
+            theMap.tile[2, 8].setClear();
+            theMap.tile[15, 11].setClear();
+            theMap.tile[15, 12].setClear();
+            theMap.tile[15, 13].setClear();
+            theMap.tile[10, 4].setClear();
+            theMap.tile[10, 3].setClear();
+            theMap.tile[10, 2].setClear();
+            theMap.tile[11, 2].setClear();
+            theMap.tile[12, 2].setClear();
+            theMap.tile[12, 3].setClear();
+            theMap.tile[12, 4].setClear();
+        }
+        //TEST
     }
 }

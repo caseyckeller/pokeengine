@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using IAPL.Map;
 
 namespace IAPL_Engine
 {
@@ -15,13 +16,74 @@ namespace IAPL_Engine
         public Rectangle Rect;
         public bool isMoving = false;
         public int moveCounter = 0;
+        public Zone map;
+        public int currentX;
+        public int currentY;
+
+        public Player()
+        {
+            map = null;
+            currentX = 9;
+            currentY = 7;
+
+        }
+
+        public void setPlayerMap(ref Zone theMap)
+        {
+            map = theMap;
+        }
 
 
         public void StartMove(string d)
         {
-            direction = d;
-            moveCounter = (Texture.Height / 2);
-            isMoving = true;
+            bool canMove = false;
+
+            switch (d)
+            {
+                case "LEFT":
+                    {
+                        if (map.tile[currentX - 1, currentY].isAccessibleFrom(Direction.East))
+                        {
+                            currentX -= 1;
+                            canMove = true;
+                        }
+                        break;
+                    }
+                case "RIGHT":
+                    {
+                        if (map.tile[currentX + 1, currentY].isAccessibleFrom(Direction.West))
+                        {
+                            currentX += 1;
+                            canMove = true;
+                        }
+                        break;
+                    }
+                case "UP":
+                    {
+                        if (map.tile[currentX, currentY + 1].isAccessibleFrom(Direction.South))
+                        {
+                            currentY += 1;
+                            canMove = true;
+                        }
+                        break;
+                    }
+                case "DOWN":
+                    {
+                        if (map.tile[currentX, currentY - 1].isAccessibleFrom(Direction.North))
+                        {
+                            currentY -= 1;
+                            canMove = true;
+                        }
+                        break;
+                    }
+                default: break;
+            }
+            if (canMove)
+            {
+                direction = d;
+                moveCounter = (Texture.Height / 2);
+                isMoving = true;
+            }
         }
 
         public void ProcessMovements()
