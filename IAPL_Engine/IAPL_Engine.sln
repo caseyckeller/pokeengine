@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAPL_Engine", "IAPL_Engine\IAPL_Engine\IAPL_Engine.csproj", "{B643B91E-3345-49BC-9F4F-FFC83B9CD6A1}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "IAPL_EngineContent", "IAPL_Engine\IAPL_EngineContent\IAPL_EngineContent.contentproj", "{9E15C3A1-6162-4441-B595-90B258E20EC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B643B91E-3345-49BC-9F4F-FFC83B9CD6A1}.Debug|x86.ActiveCfg = Debug|x86
+		{B643B91E-3345-49BC-9F4F-FFC83B9CD6A1}.Debug|x86.Build.0 = Debug|x86
+		{B643B91E-3345-49BC-9F4F-FFC83B9CD6A1}.Release|x86.ActiveCfg = Release|x86
+		{B643B91E-3345-49BC-9F4F-FFC83B9CD6A1}.Release|x86.Build.0 = Release|x86
+		{9E15C3A1-6162-4441-B595-90B258E20EC0}.Debug|x86.ActiveCfg = Debug|x86
+		{9E15C3A1-6162-4441-B595-90B258E20EC0}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
