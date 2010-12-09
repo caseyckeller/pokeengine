@@ -8,17 +8,14 @@ using IAPL.Map;
 
 namespace IAPL_Engine
 {
-    class Player
+    class Player : WorldObject
     {
         private string direction = "NONE";
 
-        public Texture2D Texture;
-        public Rectangle Rect;
         public bool isMoving = false;
         public int moveCounter = 0;
         public Zone map;
-        public int currentX;
-        public int currentY;
+        
 
         public Player()
         {

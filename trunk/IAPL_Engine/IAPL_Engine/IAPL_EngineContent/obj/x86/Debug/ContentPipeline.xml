@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2010-12-08T13:23:11.497493+08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\font.xnb</Output>
+      <Time>2010-12-09T00:39:13.795-08:00</Time>
     </Item>
     <Item>
       <Source>debug_sprite_player.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_sprite_player.xnb</Output>
-      <Time>2010-12-08T13:23:11.497493+08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_sprite_player.xnb</Output>
+      <Time>2010-12-09T00:39:13.816-08:00</Time>
     </Item>
     <Item>
       <Source>debug_grass_tile.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_grass_tile.xnb</Output>
-      <Time>2010-12-08T14:34:57.9861159+08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_grass_tile.xnb</Output>
+      <Time>2010-12-09T00:39:13.802-08:00</Time>
     </Item>
     <Item>
       <Source>debug_wall_tile.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_wall_tile.xnb</Output>
-      <Time>2010-12-08T14:35:17.2062152+08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_wall_tile.xnb</Output>
+      <Time>2010-12-09T00:39:13.799-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -43,39 +43,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_EngineContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_EngineContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_EngineContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_EngineContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T13:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2010-12-06T18:15:51.7351891+08:00</Value>
+        <Value>2010-12-05T01:38:49.169-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

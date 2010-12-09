@@ -16,5 +16,7 @@ namespace IAPL_Engine
     {
         public Texture2D Texture;
         public Rectangle Rect;
+        public int currentX;
+        public int currentY;
     }
 }
