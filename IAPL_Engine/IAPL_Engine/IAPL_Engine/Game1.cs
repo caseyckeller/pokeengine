@@ -72,7 +72,6 @@ namespace IAPL_Engine
 
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
             
             ProcessKeyboard();
             player.ProcessMovements();
