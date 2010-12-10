@@ -19,7 +19,7 @@ namespace IAPL_Engine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
-        
+        Map.Map _map = new Map.Map();
         
         Zone map = new Zone(20, 15);
         Player player = new Player();
@@ -35,8 +35,13 @@ namespace IAPL_Engine
 
         protected override void Initialize()
         {
+            // Save a test map.
+            Map.Layer _layer = new Map.Layer();
+            _layer.Tiles.Add(new Map.IndividualTile());
+            _map.Add(new Map.Layer());
+            _map.Save("file.map");
 
-            // Setup graphic properties
+            // Setup graphic properties.
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
             //graphics.ToggleFullScreen();
