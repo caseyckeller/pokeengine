@@ -122,6 +122,10 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Map\Map.vbproj">
+      <Project>{D93171E3-FEA3-4E31-B729-22429FED9321}</Project>
+      <Name>Map</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IAPL_EngineContent\IAPL_EngineContent.contentproj">
       <Name>IAPL_EngineContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
