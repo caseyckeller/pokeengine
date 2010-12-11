@@ -190,7 +190,6 @@ namespace IAPL.Map
             return val;
         }
 
-
     }
 
     public struct AFrom

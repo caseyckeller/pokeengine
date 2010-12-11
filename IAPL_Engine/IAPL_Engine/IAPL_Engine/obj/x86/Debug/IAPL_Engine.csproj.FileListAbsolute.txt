@@ -47,3 +47,6 @@ C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine
 C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.dll
 C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.pdb
 C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.xml
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.dll
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.pdb
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.xml
