@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using IAPL_Engine;
 
 namespace IAPL.Map
 {
     public enum TType { Black, Grass, Dirt, Sand, Brick }; //TODO add more tile types
     public enum Direction { North, East, South, West };
     
-    public class Tile
+    public class Tile : WorldObject
     {
         private bool jumpable; //whether the tile is jumpable, like a ledge
         private AFrom aDirection; //which directions you may enter the tile from
@@ -16,6 +17,7 @@ namespace IAPL.Map
         private bool randomEncounter; //whether random encounters can occur on this tile
         private bool ramp; //whether the tile is a bike ramp
         private bool occupied;
+        private TType tileType;
 
         //Note, X, Y, and Z must be global in relation to all other tiles of the map
         //each tile on the map must have a unique combination of X, Y and Z
@@ -26,7 +28,7 @@ namespace IAPL.Map
 
         #region Constructors
         //default is inaccessable tile
-        public Tile()
+        public Tile(string type)
         {
             jumpable = false;
             aDirection = new AFrom(false, false, false, false);
@@ -34,6 +36,7 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
+            setTType(type);
 
             //MUST BE MADE UNIQUE
             //X = 0;
@@ -91,6 +94,28 @@ namespace IAPL.Map
         public void setOccupied(bool value)
         {
             occupied = value;
+        }
+
+        public void setTType(string type)
+        {
+            switch (type)
+            {
+                case "Black":
+                    tileType = TType.Black;
+                    break;
+                case "Grass":
+                    tileType = TType.Grass;
+                    break;
+                case "Dirt":
+                    tileType = TType.Dirt;
+                    break;
+                case "Sand":
+                    tileType = TType.Sand;
+                    break;
+                case "Brick":
+                    tileType = TType.Brick;
+                    break;
+            }
         }
         #endregion
 
@@ -188,6 +213,11 @@ namespace IAPL.Map
             if (aDirection.Equals(new AFrom(true, true, true, true)) && !occupied)
                 val = true;
             return val;
+        }
+
+        public TType getTType()
+        {
+            return tileType;
         }
 
     }
