@@ -44,3 +44,6 @@ C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\IAPL_Engine.exe
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\IAPL_Engine.pdb
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.pdb
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.xml
