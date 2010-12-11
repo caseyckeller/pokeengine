@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+//this is a change
 
 namespace IAPL.Map
 {
@@ -89,7 +93,7 @@ namespace IAPL.Map
             {
                 for (int b = 0; b < mapHeight; b++)
                 {
-                    tile[a, b] = new Tile();
+                    tile[a, b] = new Tile("Grass");
                 }
             }
         }
@@ -124,6 +128,26 @@ namespace IAPL.Map
                 for (int b = 5; b <= 10; b++)
                 {
                     tile[a, b].setClear();
+                }
+            }
+        }
+
+        public void drawMap(SpriteBatch spriteBatch)
+        {
+
+            for (int a = 0; a < 20; a++)
+            {
+                for (int b = 0; b < 15; b++)
+                {
+                    Rectangle place = new Rectangle(a * 32, (15 * 32) - (b * 32) - 32, 32, 32);
+                    if (tile[a, b].isClear())
+                    {
+                        spriteBatch.Draw(grass, place, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(wall, place, Color.White);
+                    }
                 }
             }
         }
