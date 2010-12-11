@@ -48,7 +48,7 @@ namespace IAPL_Engine
             graphics.ApplyChanges();
             
             //TEST
-            setMap(ref map);
+            map.setMap();
             player.setPlayerMap(ref map);
             //TEST
 
@@ -104,6 +104,7 @@ namespace IAPL_Engine
             spriteBatch.DrawString(font, "(" + player.Rect.X + "," + player.Rect.Y + ")", new Vector2(player.Rect.X - 30, player.Rect.Y + 30), Color.White);
             spriteBatch.DrawString(font, "moveCounter: " + player.moveCounter, new Vector2(0, 0), Color.White);
             spriteBatch.DrawString(font, "isMoving: " + player.isMoving, new Vector2(0, 30), Color.White);
+            spriteBatch.DrawString(font, "Current Tile: " + player.map.tile.ToString(), new Vector2(0, 60), Color.White);
         }
 
         //This will process all the key functions
@@ -117,17 +118,17 @@ namespace IAPL_Engine
                     if(!player.CheckCollisions("UP", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
                         player.StartMove("UP");
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Down)) //move down 2 px
+            if (Keyboard.GetState().IsKeyDown(Keys.Down)) //move down
                 if (!player.isMoving)
                     if(!player.CheckCollisions("DOWN", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
                         player.StartMove("DOWN");
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left)) //move left 2 px
+            if (Keyboard.GetState().IsKeyDown(Keys.Left)) //move left
                 if (!player.isMoving)
                     if (!player.CheckCollisions("LEFT", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
                         player.StartMove("LEFT");
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Right)) // move right 2 px
+            if (Keyboard.GetState().IsKeyDown(Keys.Right)) // move right
                 if (!player.isMoving)
                     if (!player.CheckCollisions("RIGHT", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
                         player.StartMove("RIGHT");
@@ -171,29 +172,6 @@ namespace IAPL_Engine
             }
         }
 
-        public static void setMap(ref Zone theMap)
-        {
-            for (int a = 5; a <= 15; a++)
-            {
-                for (int b = 5; b <= 10; b++)
-                {
-                    theMap.tile[a, b].setClear();
-                }
-            }
-            theMap.tile[4, 8].setClear();
-            theMap.tile[3, 8].setClear();
-            theMap.tile[2, 8].setClear();
-            theMap.tile[15, 11].setClear();
-            theMap.tile[15, 12].setClear();
-            theMap.tile[15, 13].setClear();
-            theMap.tile[10, 4].setClear();
-            theMap.tile[10, 3].setClear();
-            theMap.tile[10, 2].setClear();
-            theMap.tile[11, 2].setClear();
-            theMap.tile[12, 2].setClear();
-            theMap.tile[12, 3].setClear();
-            theMap.tile[12, 4].setClear();
-        }
-        //TEST
+        
     }
 }
