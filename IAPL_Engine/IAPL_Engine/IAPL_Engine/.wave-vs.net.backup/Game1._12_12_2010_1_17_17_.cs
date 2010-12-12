@@ -22,11 +22,10 @@ namespace IAPL_Engine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
-        PokeDraw drawer;
 
         #region TestStuff
         Map.Map _map = new Map.Map();
-
+        
         Zone map = new Zone(20, 15);
         #endregion
 
@@ -46,6 +45,7 @@ namespace IAPL_Engine
             _map.Add(new Map.Layer());
             _map.Save("file.map");
             #endregion
+
             // Setup graphic properties.
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
@@ -57,11 +57,6 @@ namespace IAPL_Engine
             player.setPlayerMap(ref map);
             //TEST
 
-            drawer = new PokeDraw();
-            drawer.Content = Content;
-            drawer.spriteBatch = spriteBatch;
-            drawer.setMap(ref map);
-
             base.Initialize();
         }
 
@@ -70,9 +65,6 @@ namespace IAPL_Engine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Globals.Globals.Content = Content;
-            Globals.Globals.spriteBatch = spriteBatch;
-
             font = Content.Load<SpriteFont>("font");
 
             player.Texture = Content.Load<Texture2D>("WorldObject/Player/debug_sprite_player");
@@ -80,8 +72,8 @@ namespace IAPL_Engine
             SetUpPlayer();
 
             //Test
-            //grass.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_grass_tile"); <--- should be in tile.cs
-            //wall.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_wall_tile"); <--- should be in tile.cs
+            grass.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_grass_tile");
+            wall.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_wall_tile");
             //TEST
 
         }
