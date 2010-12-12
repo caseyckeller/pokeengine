@@ -186,14 +186,14 @@ namespace IAPL.itemlib
 
                     if (pokemon_status > 0)
                     {
-                        pokemon_status == 0
+                        pokemon_status == 0;
                     }
 
                  
                     return current_hp;
                 }
 
-                int par_heal (string pokemon_name, byte pokemon_status, string restore_message)
+                byte par_heal (byte pokemon_number, byte pokemon_status)
                 {
                     //Paralyze heal
 
