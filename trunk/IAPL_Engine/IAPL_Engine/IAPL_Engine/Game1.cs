@@ -40,12 +40,15 @@ namespace IAPL_Engine
 
         protected override void Initialize()
         {
+            /*
             #region Test Map
             Map.Layer _layer = new Map.Layer();
             _layer.Tiles.Add(new Map.IndividualTile());
             _map.Add(new Map.Layer());
             _map.Save("file.map");
             #endregion
+             */
+
             // Setup graphic properties.
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
@@ -58,9 +61,11 @@ namespace IAPL_Engine
             //TEST
 
             drawer = new PokeDraw();
+
+            drawer = new PokeDraw();
             drawer.Content = Content;
             drawer.spriteBatch = spriteBatch;
-            drawer.setMap(ref map);
+            //drawer.setMap(ref map);
 
             base.Initialize();
         }
@@ -70,12 +75,13 @@ namespace IAPL_Engine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Globals.Globals.Content = Content;
-            Globals.Globals.spriteBatch = spriteBatch;
+            drawer.Content = Content;
+            drawer.setMapAndBatch(ref map, ref spriteBatch);
 
             font = Content.Load<SpriteFont>("font");
 
             player.Texture = Content.Load<Texture2D>("WorldObject/Player/debug_sprite_player");
+            drawer.loadTextures();
 
             SetUpPlayer();
 
@@ -103,7 +109,8 @@ namespace IAPL_Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            map.drawMap(spriteBatch);
+            //map.drawMap(spriteBatch);
+            drawer.drawTiles();
             DrawPlayer();
             DrawDebug();
             spriteBatch.End();

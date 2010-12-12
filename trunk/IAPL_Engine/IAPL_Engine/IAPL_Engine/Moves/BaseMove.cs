@@ -8,6 +8,7 @@ namespace IAPL.Moves
     /// <summary>
     /// This is a base move, it stores basic information for a move. PP will be stored in an ActiveMove class and will be aggregated by the pokemon
     /// </summary>
+    [Serializable]
     public class BaseMove
     {
         public String name;

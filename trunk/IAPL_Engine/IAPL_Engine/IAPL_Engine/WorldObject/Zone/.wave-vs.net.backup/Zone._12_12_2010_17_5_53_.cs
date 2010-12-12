@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 //this is a change
@@ -92,7 +91,7 @@ namespace IAPL.Map
             {
                 for (int b = 0; b < mapHeight; b++)
                 {
-                    tile[a, b] = new Tile();
+                    tile[a, b] = new Tile("Grass");
                 }
             }
         }
@@ -120,7 +119,7 @@ namespace IAPL.Map
             return xy;
         }
 
-        /*
+        
         public void drawMap(SpriteBatch spriteBatch)
         {
 
@@ -128,15 +127,29 @@ namespace IAPL.Map
             {
                 for (int b = 0; b < mapHeight; b++)
                 {
-                    Rectangle place = new Rectangle(a * 32, (15 * 32) - (b * 32) - 32, 32, 32);
+                    Rectangle place = new Rectangle(a * 32, (480) - (b * 32) - 32, 32, 32);
 
-                    foreach(Tile t in tile)
+                    switch (tile[a, b].getTType())
                     {
-                        spriteBatch.Draw(t.getTexture(), place, Color.White); // <--- thx lol
+                        case TType.Grass:
+                            {
+
+                            }
+                    }
+                    if (tile[a, b].isClear())
+                    {
+                        spriteBatch.Draw(grass, place, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(wall, place, Color.White);
                     }
                 }
             }
-        }*/
+        }
+<<<<<<< .mine
+         
+=======
 
         #region TEST
         public void setMap()
@@ -146,10 +159,10 @@ namespace IAPL.Map
                 for (int b = 5; b <= 10; b++)
                 {
                     tile[a, b].setClear();
-                    tile[a, b].tileType = TType.Grass;
                 }
             }
         }
         #endregion
+>>>>>>> .r45
     }
 }
