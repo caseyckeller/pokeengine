@@ -11,9 +11,6 @@ using Microsoft.Xna.Framework.Media;
 using IAPL.Pokemon_Library;
 using IAPL.Map;
 
-// btw im back lol
-// welcome back. Was beginning to wonder if you had fallen in or not.
-// hello? im here, lol
 namespace IAPL_Engine
 {
 
@@ -30,6 +27,9 @@ namespace IAPL_Engine
         #endregion
 
         Player player = new Player();
+
+        Tile grass;
+        Tile wall;
 
         public Game1()
         {
@@ -66,14 +66,13 @@ namespace IAPL_Engine
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             font = Content.Load<SpriteFont>("font");
-
-            player.Texture = Content.Load<Texture2D>("WorldObject/Player/debug_sprite_player");
+            player.Texture = Content.Load<Texture2D>("debug_sprite_player");
 
             SetUpPlayer();
 
             //Test
-            grass.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_grass_tile");
-            wall.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_wall_tile");
+            grass.Texture = Content.Load<Texture2D>("debug_grass_tile");
+            wall.Texture = Content.Load<Texture2D>("debug_wall_tile");
             //TEST
 
         }
@@ -144,6 +143,7 @@ namespace IAPL_Engine
         //This sets up the player rectangle, which holds information like Texture2D's and Position
         public void SetUpPlayer()
         {
+
             player.Rect.X = ((graphics.PreferredBackBufferWidth / 2) - player.Texture.Width);
             player.Rect.Y = ((graphics.PreferredBackBufferHeight / 2) - (player.Texture.Height / 2));
             player.Rect.Width = player.Texture.Width;
