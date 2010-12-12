@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using IAPL_Engine;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework;
-using IAPL_Engine.Globals;
 
 namespace IAPL.Map
 {
-    public enum TType { Black, Grass, Dirt, Sand, Brick, Wall }; //TODO add more tile types
+    public enum TType { Black, Grass, Dirt, Sand, Brick }; //TODO add more tile types
     public enum Direction { North, East, South, West };
     
-    public class Tile
+    public class Tile : WorldObject
     {
         private bool jumpable; //whether the tile is jumpable, like a ledge
         private AFrom aDirection; //which directions you may enter the tile from
@@ -21,8 +17,7 @@ namespace IAPL.Map
         private bool randomEncounter; //whether random encounters can occur on this tile
         private bool ramp; //whether the tile is a bike ramp
         private bool occupied;
-        public TType tileType;
-        //private Texture2D tileTexture;
+        private TType tileType;
 
         //Note, X, Y, and Z must be global in relation to all other tiles of the map
         //each tile on the map must have a unique combination of X, Y and Z
@@ -33,7 +28,7 @@ namespace IAPL.Map
 
         #region Constructors
         //default is inaccessable tile
-        public Tile()
+        public Tile(string type)
         {
             jumpable = false;
             aDirection = new AFrom(false, false, false, false);
@@ -41,7 +36,7 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
-            tileType = TType.Black;
+            setTType(type);
 
             //MUST BE MADE UNIQUE
             //X = 0;
@@ -59,7 +54,6 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
-            tileType = TType.Black;
 
             //MUST BE MADE UNIQUE
             //X = inX;
@@ -68,7 +62,6 @@ namespace IAPL.Map
         }
         #endregion
 
-        
         #region Setters
         public void setJumpable(bool value)
         {
@@ -103,39 +96,33 @@ namespace IAPL.Map
             occupied = value;
         }
 
-        /*public void setTType(string type)
+        public void setTType(string type)
         {
             switch (type)
             {
                 case "Black":
                     tileType = TType.Black;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Black"); //<---- we need to do something like this
                     break;
                 case "Grass":
                     tileType = TType.Grass;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Grass");
                     break;
                 case "Dirt":
                     tileType = TType.Dirt;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Dirt");
                     break;
                 case "Sand":
                     tileType = TType.Sand;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Sand");
                     break;
                 case "Brick":
                     tileType = TType.Brick;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Brick");
                     break;
             }
-        }*/
+        }
         #endregion
 
         //makes accessible from all directions
         public void setClear()
         {
             aDirection = new AFrom(true, true, true, true);
-            occupied = false;
         }
 
         #region Getters
@@ -233,19 +220,6 @@ namespace IAPL.Map
             return tileType;
         }
 
-<<<<<<< .mine
-        /*public Texture2D getTexture()
-        {
-            return tileTexture;
-        }*/
-
-=======
-        public Texture2D getTexture()
-        {
-            return tileTexture;
-        }
-
->>>>>>> .r46
     }
 
     public struct AFrom

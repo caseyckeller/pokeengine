@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 //this is a change
@@ -36,6 +35,8 @@ namespace IAPL.Map
 
         private int globalX; //global X coordinate of tile [0][0]
         private int globalY; //global Y coordinate of tile [0][0]
+
+        
 
         #region Constructors
         //default constructor makes a 50x50 zone
@@ -92,7 +93,7 @@ namespace IAPL.Map
             {
                 for (int b = 0; b < mapHeight; b++)
                 {
-                    tile[a, b] = new Tile();
+                    tile[a, b] = new Tile("Grass");
                 }
             }
         }
@@ -120,25 +121,6 @@ namespace IAPL.Map
             return xy;
         }
 
-        /*
-        public void drawMap(SpriteBatch spriteBatch)
-        {
-
-            for (int a = 0; a < mapWidth; a++)
-            {
-                for (int b = 0; b < mapHeight; b++)
-                {
-                    Rectangle place = new Rectangle(a * 32, (15 * 32) - (b * 32) - 32, 32, 32);
-
-                    foreach(Tile t in tile)
-                    {
-                        spriteBatch.Draw(t.getTexture(), place, Color.White); // <--- thx lol
-                    }
-                }
-            }
-        }*/
-
-        #region TEST
         public void setMap()
         {
             for (int a = 5; a <= 15; a++)
@@ -146,10 +128,30 @@ namespace IAPL.Map
                 for (int b = 5; b <= 10; b++)
                 {
                     tile[a, b].setClear();
-                    tile[a, b].tileType = TType.Grass;
                 }
             }
         }
-        #endregion
+
+        
+        public void drawMap(SpriteBatch spriteBatch)
+        {
+
+            for (int a = 0; a < mapWidth; a++)
+            {
+                for (int b = 0; b < mapHeight; b++)
+                {
+                    Rectangle place = new Rectangle(a * 32, (480) - (b * 32) - 32, 32, 32);
+                    if (tile[a, b].isClear())
+                    {
+                        spriteBatch.Draw(grass, place, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(wall, place, Color.White);
+                    }
+                }
+            }
+        }
+         
     }
 }

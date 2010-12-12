@@ -59,18 +59,18 @@ namespace IAPL_Engine
                     }
                 case "UP":
                     {
-                        if (map.tile[currentX, currentY + 1].isAccessibleFrom(Direction.South))
+                        if (map.tile[currentX, currentY - 1].isAccessibleFrom(Direction.South))
                         {
-                            currentY += 1;
+                            currentY -= 1;
                             canMove = true;
                         }
                         break;
                     }
                 case "DOWN":
                     {
-                        if (map.tile[currentX, currentY - 1].isAccessibleFrom(Direction.North))
+                        if (map.tile[currentX, currentY + 1].isAccessibleFrom(Direction.North))
                         {
-                            currentY -= 1;
+                            currentY += 1;
                             canMove = true;
                         }
                         break;
