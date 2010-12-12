@@ -40,27 +40,17 @@ namespace IAPL_Engine
 
         protected override void Initialize()
         {
-            /*
-            #region Test Map
-            Map.Layer _layer = new Map.Layer();
-            _layer.Tiles.Add(new Map.IndividualTile());
-            _map.Add(new Map.Layer());
-            _map.Save("file.map");
-            #endregion
-             */
 
             // Setup graphic properties.
             graphics.PreferredBackBufferWidth = 640;
             graphics.PreferredBackBufferHeight = 480;
             //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
-            
-            //TEST
+
+            #region TEST
             map.setMap();
             player.setPlayerMap(ref map);
-            //TEST
-
-            drawer = new PokeDraw();
+            #endregion
 
             drawer = new PokeDraw();
             drawer.Content = Content;
@@ -84,11 +74,6 @@ namespace IAPL_Engine
             drawer.loadTextures();
 
             SetUpPlayer();
-
-            //Test
-            //grass.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_grass_tile"); <--- should be in tile.cs
-            //wall.Texture = Content.Load<Texture2D>("WorldObject/Zone/Tile/debug_wall_tile"); <--- should be in tile.cs
-            //TEST
 
         }
 

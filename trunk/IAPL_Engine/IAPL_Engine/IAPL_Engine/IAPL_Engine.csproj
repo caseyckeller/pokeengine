@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Globals\Globals.cs" />
+    <Compile Include="Items\Items.cs" />
+    <Compile Include="Items\Potion.cs" />
     <Compile Include="Moves\ActiveMove.cs" />
     <Compile Include="Moves\MoveList.cs" />
     <Compile Include="PokeDraw.cs" />
