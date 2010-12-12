@@ -49,19 +49,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="debug_sprite_player.png">
+    <Compile Include="WorldObject\Player\debug_sprite_player.png">
       <Name>debug_sprite_player</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="debug_grass_tile.png">
+    <Compile Include="WorldObject\Zone\Tile\debug_grass_tile.png">
       <Name>debug_grass_tile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="debug_wall_tile.png">
+    <Compile Include="WorldObject\Zone\Tile\debug_wall_tile.png">
       <Name>debug_wall_tile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
