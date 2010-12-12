@@ -58,17 +58,20 @@ namespace IAPL.itemlib
         {
             //Class for healing items, such as potions
 
-            int potion (string pokemon_name, int restore_hp, int max_hp, int current_hp, byte potion_type, byte pokemon_status, string restore_message)
+            int potion (byte pokemon_number, int max_hp, int current_hp, byte potion_type, byte pokemon_status)
             {
+
+                int restore_hp;
+                
                 /*Variables-
+                 * byte pokemon_number = each pokemon in your party is assigned a number of 1-6. This represents
+                 * that number.
                  * int restore_hp = amount of hp to be restored
                  * int max_hp = represents the pokemons maximum hp
                  * int current_hp = represents the pokemons current hp
                  * byte potion_type = type of potion used (explanation below)
                  * byte pokemon_status = whether or not the pokemon is posioned, par, etc. if = 0, then the
-                 * pokemon is okay
-                 * string restore_message = message you get when you try and use the item
-                 * string pokemon_name = name of your pokemon
+                 * pokemon is okay                
                  */
 
                /* Potion types
@@ -85,8 +88,8 @@ namespace IAPL.itemlib
 
                     if (current_hp == max_hp)
                     {
-                        restore_message = "This won't have any effect \n";
-                        return current_hp, restore_message;
+                       
+                        return current_hp;
                     }
                     
                     current_hp = current_hp + restore_hp;
@@ -96,7 +99,7 @@ namespace IAPL.itemlib
                         current_hp == max_hp;
                     }
 
-                    restore_message = "%s regained hp", pokemon_name;
+                    
                     return current_hp;
                 }
 
@@ -106,8 +109,8 @@ namespace IAPL.itemlib
 
                      if (current_hp == max_hp)
                     {
-                        restore_message = "This won't have any effect \n";
-                        return current_hp, restore_message;
+                        
+                        return current_hp;
                     }
                     
                     current_hp = current_hp + restore_hp;
@@ -117,7 +120,7 @@ namespace IAPL.itemlib
                         current_hp == max_hp;
                     }
 
-                    restore_message = "%s regained hp", pokemon_name;
+                    
                     return current_hp;
                 }
 
@@ -127,8 +130,8 @@ namespace IAPL.itemlib
 
                      if (current_hp == max_hp)
                     {
-                        restore_message = "This won't have any effect \n";
-                        return current_hp, restore_message;
+                        
+                        return current_hp;
                     }
                     
                     current_hp = current_hp + restore_hp;
@@ -138,7 +141,7 @@ namespace IAPL.itemlib
                         current_hp == max_hp;
                     }
 
-                    restore_message = "%s regained hp", pokemon_name;
+                   
                     return current_hp;
                 }
 
@@ -148,8 +151,8 @@ namespace IAPL.itemlib
 
                      if (current_hp == max_hp)
                     {
-                        restore_message = "This won't have any effect \n";
-                        return current_hp, restore_message;
+                        
+                        return current_hp;
                     }
                     
                     current_hp = current_hp + restore_hp;
@@ -159,7 +162,7 @@ namespace IAPL.itemlib
                         current_hp == max_hp;
                     }
 
-                    restore_message = "%s regained hp", pokemon_name;
+                  
                     return current_hp;
                 }
 
@@ -170,8 +173,8 @@ namespace IAPL.itemlib
 
                      if (current_hp == max_hp)
                     {
-                        restore_message = "This won't have any effect \n";
-                        return current_hp, restore_message;
+                        
+                        return current_hp;
                     }
                     
                     current_hp = current_hp + restore_hp;
@@ -186,8 +189,8 @@ namespace IAPL.itemlib
                         pokemon_status == 0
                     }
 
-                    restore_message = "%s regained hp", pokemon_name;
-                    return current_hp, pokemon_status;
+                 
+                    return current_hp;
                 }
 
                 int par_heal (string pokemon_name, byte pokemon_status, string restore_message)
@@ -197,14 +200,13 @@ namespace IAPL.itemlib
                     if pokemon_status != 1
                     {
                         pokemon_status = pokemon_status;
-                        restore_message = "This won't have any effect";
-                        return pokemon_status, restore_message;
+                       
+                        return pokemon_status;
                     }
 
                     else if (pokemon_status = 1)
                     {
                         pokemon_status == 0);
-                        restore_message = "%s is no longer paralyzed", pokemon_name;
                                                
                         return pokemon_status;
                     }
