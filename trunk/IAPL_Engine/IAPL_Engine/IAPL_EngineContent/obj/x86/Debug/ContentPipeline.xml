@@ -11,31 +11,31 @@
       <Time>2010-12-10T16:29:03.963-08:00</Time>
     </Item>
     <Item>
-      <Source>debug_sprite_player.png</Source>
-      <Name>debug_sprite_player</Name>
+      <Source>WorldObject\Player\debug_sprite_player.png</Source>
+      <Name>WorldObject\Player\debug_sprite_player</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_sprite_player.xnb</Output>
-      <Time>2010-12-10T16:29:04.004-08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Player\debug_sprite_player.xnb</Output>
+      <Time>2010-12-12T00:39:16.369-08:00</Time>
     </Item>
     <Item>
-      <Source>debug_grass_tile.png</Source>
-      <Name>debug_grass_tile</Name>
+      <Source>WorldObject\Zone\Tile\debug_grass_tile.png</Source>
+      <Name>WorldObject\Zone\Tile\debug_grass_tile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_grass_tile.xnb</Output>
-      <Time>2010-12-10T16:29:03.996-08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Zone\Tile\debug_grass_tile.xnb</Output>
+      <Time>2010-12-12T00:39:04.234-08:00</Time>
     </Item>
     <Item>
-      <Source>debug_wall_tile.png</Source>
-      <Name>debug_wall_tile</Name>
+      <Source>WorldObject\Zone\Tile\debug_wall_tile.png</Source>
+      <Name>WorldObject\Zone\Tile\debug_wall_tile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_wall_tile.xnb</Output>
-      <Time>2010-12-10T16:29:03.993-08:00</Time>
+      <Output>C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Zone\Tile\debug_wall_tile.xnb</Output>
+      <Time>2010-12-12T00:39:07.183-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 //this is a change
@@ -123,15 +122,26 @@ namespace IAPL.Map
         public void drawMap(SpriteBatch spriteBatch)
         {
 
-            for (int a = 0; a < mapWidth; a++)
+            for (int a = 0; a < 20; a++)
             {
-                for (int b = 0; b < mapHeight; b++)
+                for (int b = 0; b < 15; b++)
                 {
                     Rectangle place = new Rectangle(a * 32, (15 * 32) - (b * 32) - 32, 32, 32);
 
-                    foreach(Tile t in tile)
+                    switch (tile[a, b].getTType())
                     {
-                        spriteBatch.Draw(t.getTexture(), place, Color.White); // <--- thx lol
+                        case TType.Grass:
+                            {
+                                tile[a,b].setTType
+                            }
+                    }
+                    if (tile[a, b].isClear())
+                    {
+                        spriteBatch.Draw(grass, place, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(wall, place, Color.White);
                     }
                 }
             }

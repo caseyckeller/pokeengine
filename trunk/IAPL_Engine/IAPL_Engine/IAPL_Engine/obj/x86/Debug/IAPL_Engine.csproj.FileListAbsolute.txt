@@ -35,9 +35,6 @@ C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug
 C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\IAPL_Engine.exe
 C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\IAPL_Engine.pdb
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\font.xnb
-C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_sprite_player.xnb
-C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_grass_tile.xnb
-C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\debug_wall_tile.xnb
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\IAPL_Engine.exe
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\IAPL_Engine.pdb
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\obj\x86\Debug\ResolveAssemblyReference.cache
@@ -50,3 +47,6 @@ C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.dll
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.pdb
 C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Map.xml
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Player\debug_sprite_player.xnb
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Zone\Tile\debug_grass_tile.xnb
+C:\Users\Tim\Documents\My Dropbox\pokeengine\IAPL_Engine\IAPL_Engine\IAPL_Engine\bin\x86\Debug\Content\WorldObject\Zone\Tile\debug_wall_tile.xnb

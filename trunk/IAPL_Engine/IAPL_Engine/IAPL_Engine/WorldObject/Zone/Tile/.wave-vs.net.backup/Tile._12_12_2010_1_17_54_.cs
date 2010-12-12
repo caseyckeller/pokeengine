@@ -5,15 +5,13 @@ using System.Text;
 using IAPL_Engine;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework;
-using IAPL_Engine.Globals;
 
 namespace IAPL.Map
 {
     public enum TType { Black, Grass, Dirt, Sand, Brick }; //TODO add more tile types
     public enum Direction { North, East, South, West };
     
-    public class Tile
+    public class Tile : WorldObject
     {
         private bool jumpable; //whether the tile is jumpable, like a ledge
         private AFrom aDirection; //which directions you may enter the tile from
@@ -59,7 +57,6 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
-            tileType = TType.Black;
 
             //MUST BE MADE UNIQUE
             //X = inX;
@@ -68,7 +65,6 @@ namespace IAPL.Map
         }
         #endregion
 
-        
         #region Setters
         public void setJumpable(bool value)
         {
@@ -109,23 +105,23 @@ namespace IAPL.Map
             {
                 case "Black":
                     tileType = TType.Black;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Black"); //<---- we need to do something like this
+
                     break;
                 case "Grass":
                     tileType = TType.Grass;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Grass");
+
                     break;
                 case "Dirt":
                     tileType = TType.Dirt;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Dirt");
+
                     break;
                 case "Sand":
                     tileType = TType.Sand;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Sand");
+
                     break;
                 case "Brick":
                     tileType = TType.Brick;
-                    //tileTexture = Globals.Content.Load<Texture2D>("Zone/Tile/Brick");
+
                     break;
             }
         }
@@ -230,11 +226,6 @@ namespace IAPL.Map
         public TType getTType()
         {
             return tileType;
-        }
-
-        public Texture2D getTexture()
-        {
-            return tileTexture;
         }
 
     }

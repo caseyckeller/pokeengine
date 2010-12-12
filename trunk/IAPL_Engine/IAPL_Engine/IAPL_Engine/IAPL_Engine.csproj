@@ -107,8 +107,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Globals\Globals.cs" />
     <Compile Include="Moves\ActiveMove.cs" />
     <Compile Include="Moves\MoveList.cs" />
+    <Compile Include="PokeDraw.cs" />
     <Compile Include="Pokemon\ActivePokemon.cs" />
     <Compile Include="Moves\BaseMove.cs" />
     <Compile Include="Pokemon\BasePokemon.cs" />
