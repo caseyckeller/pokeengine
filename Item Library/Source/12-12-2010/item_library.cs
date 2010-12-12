@@ -58,11 +58,20 @@ namespace IAPL.itemlib
         {
             //Class for healing items, such as potions
 
-            int potion (byte pokemon_number, int max_hp, int current_hp, byte potion_type, byte pokemon_status)
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="pokemon_number"></param>
+            /// <param name="max_hp"></param>
+            /// <param name="current_hp"></param>
+            /// <param name="potion_type"></param>
+            /// <param name="pokemon_status"></param>
+            /// <returns></returns>
+            int potion(byte pokemon_number, int max_hp, int current_hp, byte potion_type, byte pokemon_status)
             {
 
                 int restore_hp;
-                
+
                 /*Variables-
                  * byte pokemon_number = each pokemon in your party is assigned a number of 1-6. This represents
                  * that number.
@@ -74,112 +83,112 @@ namespace IAPL.itemlib
                  * pokemon is okay                
                  */
 
-               /* Potion types
-                * 1- potion
-                * 2- super potion
-                * 3- hyper potion
-                * 4- max potion
-                * 5- full restore
-                */
+                /* Potion types
+                 * 1- potion
+                 * 2- super potion
+                 * 3- hyper potion
+                 * 4- max potion
+                 * 5- full restore
+                 */
 
-                while (potion_type == 1) 
+                while (potion_type == 1)
                 {
                     restore_hp == 20;
 
                     if (current_hp == max_hp)
                     {
-                       
+
                         return current_hp;
                     }
-                    
+
                     current_hp = current_hp + restore_hp;
-                    
-                    if (current_hp > max_hp) 
+
+                    if (current_hp > max_hp)
                     {
                         current_hp == max_hp;
                     }
 
-                    
+
                     return current_hp;
                 }
 
-                while (potion_type == 2) 
+                while (potion_type == 2)
                 {
                     restore_hp == 50;
 
-                     if (current_hp == max_hp)
+                    if (current_hp == max_hp)
                     {
-                        
+
                         return current_hp;
                     }
-                    
+
                     current_hp = current_hp + restore_hp;
-                    
-                    if (current_hp > max_hp) 
+
+                    if (current_hp > max_hp)
                     {
                         current_hp == max_hp;
                     }
 
-                    
+
                     return current_hp;
                 }
 
-                while (potion_type == 3) 
+                while (potion_type == 3)
                 {
                     restore_hp == 200;
 
-                     if (current_hp == max_hp)
+                    if (current_hp == max_hp)
                     {
-                        
+
                         return current_hp;
                     }
-                    
+
                     current_hp = current_hp + restore_hp;
-                    
-                    if (current_hp > max_hp) 
+
+                    if (current_hp > max_hp)
                     {
                         current_hp == max_hp;
                     }
 
-                   
+
                     return current_hp;
                 }
 
-                while (potion_type == 4) 
+                while (potion_type == 4)
                 {
                     restore_hp == max_hp;
 
-                     if (current_hp == max_hp)
+                    if (current_hp == max_hp)
                     {
-                        
+
                         return current_hp;
                     }
-                    
+
                     current_hp = current_hp + restore_hp;
-                    
-                    if (current_hp > max_hp) 
+
+                    if (current_hp > max_hp)
                     {
                         current_hp == max_hp;
                     }
 
-                  
+
                     return current_hp;
                 }
 
-                while (potion_type == 5) 
+                while (potion_type == 5)
                 {
-                    
+
                     restore_hp == max_hp;
 
-                     if (current_hp == max_hp)
+                    if (current_hp == max_hp)
                     {
-                        
+
                         return current_hp;
                     }
-                    
+
                     current_hp = current_hp + restore_hp;
-                    
-                    if (current_hp > max_hp) 
+
+                    if (current_hp > max_hp)
                     {
                         current_hp == max_hp;
                     }
@@ -189,28 +198,29 @@ namespace IAPL.itemlib
                         pokemon_status == 0;
                     }
 
-                 
+
                     return current_hp;
                 }
+            }
 
-                byte par_heal (byte pokemon_number, byte pokemon_status)
+            byte par_heal (byte pokemon_number, byte pokemon_status)
+            {
+                //Paralyze heal
+
+                if (pokemon_status != 1)
                 {
-                    //Paralyze heal
-
-                    if pokemon_status != 1
-                    {
-                        pokemon_status = pokemon_status;
+                    pokemon_status = pokemon_status;
                        
-                        return pokemon_status;
-                    }
-
-                    else if (pokemon_status = 1)
-                    {
-                        pokemon_status == 0);
-                                               
-                        return pokemon_status;
-                    }
+                    return pokemon_status;
                 }
+
+                else if (pokemon_status = 1)
+                {
+                    pokemon_status = 0;
+                                               
+                    return pokemon_status;
+                }
+            }
 
         }
 
