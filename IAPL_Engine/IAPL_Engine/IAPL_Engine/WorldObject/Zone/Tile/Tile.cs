@@ -233,19 +233,10 @@ namespace IAPL.Map
             return tileType;
         }
 
-<<<<<<< .mine
         /*public Texture2D getTexture()
         {
             return tileTexture;
         }*/
-
-=======
-        public Texture2D getTexture()
-        {
-            return tileTexture;
-        }
-
->>>>>>> .r46
     }
 
     public struct AFrom

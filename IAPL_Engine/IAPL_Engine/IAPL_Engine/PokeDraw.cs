@@ -1,5 +1,4 @@
-<<<<<<< .mine
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,7 +88,7 @@ namespace IAPL_Engine
 
     }
 }
-=======
+/*
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -141,4 +140,4 @@ namespace IAPL_Engine
         }
     }
 }
->>>>>>> .r46
+*/
