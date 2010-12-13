@@ -89,7 +89,7 @@ namespace IAPL.itemlib
                 //to rage.
 
                 int restore_hp;
-                               
+
                 while (potion_type == 1)
                 {
                     restore_hp == 20;
