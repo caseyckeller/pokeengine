@@ -21,7 +21,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  
 Contributers-
- * Brenden Homan
+ * Brenden Homan (aka, bigplrbear)
  * Darkkal
  * [insert contributer here]
  
@@ -31,7 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading; //might be used to do some multithreading tasks
+// using System.Threading; might be used to do some multithreading tasks later. Commented out because it's unnecessary atm.
 
 namespace IAPL.itemlib
 {
@@ -237,7 +237,7 @@ namespace IAPL.itemlib
             {
                 while (is_on == 1)
                 {
-                    sound_name = "chiptune_%s", sound_name; //append "chiptune" to the front of the song name to play.
+                    sound_name = "chiptune_" + sound_name; //append "chiptune" to the front of the song name to play.
                 }
             return sound_name;
             }
