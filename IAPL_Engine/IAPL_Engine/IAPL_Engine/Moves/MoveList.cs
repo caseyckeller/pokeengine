@@ -16,6 +16,7 @@ namespace IAPL.Moves
     class MoveList
     {
         public SortedList<string, BaseMove> move;
+
         public int numberOfMoves
         {
             get { return move.Count; }

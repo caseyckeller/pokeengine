@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+//These are for scripting
+using IronPython.Hosting;
+using Microsoft.Scripting;
+using Microsoft.Scripting.Hosting;
 
 namespace IAPL.Moves
 {
