@@ -227,6 +227,55 @@ namespace IAPL.itemlib
                 }
             }
 
+            void wake(byte pokemon_number, out byte pokemon_status, out byte did_it_work)
+            {
+                //wake up pokemon
+                if (pokemon_status != 3)
+                {
+                    did_it_work == 1;
+                }
+
+                else if (pokemon_status == 3)
+                {
+                    pokemon_status = 0;
+                    did_it_work == 0;
+                }
+            }
+
+            void brn_heal(byte pokemon_number, out byte pokemon_status, out byte did_it_work)
+            {
+                //burn heal
+
+                if (pokemon_status != 4)
+                {
+                    did_it_work == 1;
+                }
+
+                else if (pokemon_status == 4)
+                {
+                    pokemon_status = 0;
+                    did_it_work == 0;
+                }
+            }
+
+            void frz_heal(byte pokemon_number, out byte pokemon_status, out byte did_it_work)
+            {
+                //Freeze heal
+
+                if (pokemon_status != 5)
+                {
+                    did_it_work_ == 1;
+                }
+
+                else if (pokemon_status == 5)
+                {
+                    pokemon_status = 0;
+                    did_it_work = 0;
+
+                }
+            }
+
+
         }
 
         public class key_items
