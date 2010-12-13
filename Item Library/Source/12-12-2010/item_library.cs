@@ -278,6 +278,38 @@ namespace IAPL.itemlib
 
         }
 
+        public class hold
+        {
+            //class for held items
+
+            /// <summary>
+            /// doubles prize money
+            /// </summary>
+            /// <param name="pokemon_number">Represents pokemon number</param>
+            /// <param name="prize_money">How much prize money you get</param>
+            /// <param name="item_held">if 1, the item is being held. 0 or null means the item is not held.</param>
+            /// <param name="sent_to_battle">if 1, the pokemon was sent in to battle. if 0 or null, the pokemon was not</param>
+            
+            int amulet_coin (byte pokemon_number, out int prize_money, byte item_held, byte sent_to_battle)
+            {
+                
+                if (item_held == 0) //No coin? NO EXTRA MONEY FOR YOU
+                {
+                    return prize_money;
+                }
+
+                if (pokemon_number == 1 && item_held == 1) //if the first pokemon in your party is holding the item
+                {
+                    prize_money == prize_money * 2;         //automagically assume they're the first in battle
+
+                    return prize_money;
+                }
+
+
+            }
+        }
+
+
         public class key_items
         {
             //Class for key items, such as the GB player
@@ -305,11 +337,7 @@ namespace IAPL.itemlib
             //Class for Pokeballs, ultraballs, etc
         }
 
-        public class hold
-        {
-            //Class for held items
-        }
-
+       
         public class stones
         {
             //LETS ALL GET STONED
