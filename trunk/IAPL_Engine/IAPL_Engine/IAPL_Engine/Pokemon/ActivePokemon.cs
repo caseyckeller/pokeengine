@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using IAPL.Pokemon;
+using IAPL.Moves;
 
 namespace IAPL.Pokemon
 {
@@ -78,7 +79,11 @@ namespace IAPL.Pokemon
 
         public int currentExp;
 
-        //TODO add some move fields
+        //TODO find a way to randomly set these depending on level and basepokemon when creating a random instance
+        public ActiveMove Move1;
+        public ActiveMove Move2;
+        public ActiveMove Move3;
+        public ActiveMove Move4;
 
         //TODO add a held item field
 

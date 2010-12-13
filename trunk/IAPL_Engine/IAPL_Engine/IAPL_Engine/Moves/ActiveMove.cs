@@ -6,7 +6,7 @@ using System.Text;
 namespace IAPL.Moves
 {
     [Serializable]
-    class ActiveMove
+    public class ActiveMove
     {
         BaseMove bMove; //Base Move of this move
         int maxPP; //max PP of this move
