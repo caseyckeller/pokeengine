@@ -93,17 +93,15 @@ namespace IAPL.Pokemon
         /// <summary>
         /// Removes a pokemon with the specified name
         /// </summary>
-        /// <param name="moveName">BasePokemon you wish to remove</param>
+        /// <param name="moveName">Pokemon Name you wish to remove</param>
         public void removePokemon(String pokeName)
         {
-            for(int i = 0; i < numberOfPokemon; i++)
+            try
             {
-                if(pokemon[i].Name == pokeName)
-                {
-                    pokemon.Remove(pokemon[i].PDexNo);
-                    break;
-                }
+                pokemon.Remove(names[pokeName]);
             }
+            catch (KeyNotFoundException)
+            { }
         }
     }
 }

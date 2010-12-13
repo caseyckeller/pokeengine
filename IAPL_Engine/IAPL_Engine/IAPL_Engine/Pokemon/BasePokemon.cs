@@ -14,6 +14,12 @@ namespace IAPL.Pokemon
     [Serializable]
     public class BasePokemon
     {
+        //TODO add pokemon abilities
+        //TODO add egg groups
+        //TODO add possible moves
+        //TODO add height and weight?
+        //TODO add pokemon evolution
+
         public int baseHP;
         public int baseAttack;
         public int baseDefense;
