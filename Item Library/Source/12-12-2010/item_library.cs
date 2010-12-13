@@ -77,6 +77,10 @@ namespace IAPL.itemlib
             ///<param name="did_it_work">Returns 0 or null if it did, 1 if it didn't</param>
             /// <returns>current_hp, pokemon_status</returns>
             
+            //EXAMPLE USAGE
+            //potion (1, 20, 15, 1, 0, null);
+            //1st pokemon, with 20 max hp, 15 current hp, potion type 1, no status ailment. Always make did_it_work null!
+
             void potion(byte pokemon_number, int max_hp, out int current_hp, byte potion_type, byte pokemon_status, out byte did_it_work)
             {
 
