@@ -106,65 +106,75 @@ namespace IAPL.Pokemon
         /// <param name="val"></param>
         private Type convertToType(String val)
         {
-            Type ret = Type.Blank;
-            switch (val)
+            //Type ret = Type.Blank;
+
+            try
             {
-                case "Normal":
-                    ret = Type.Normal;
-                    break;
-                case  "Fire":
-                    ret = Type.Fire;
-                    break;
-                case "Poison":
-                    ret = Type.Poison;
-                    break;
-                case "Fighting":
-                    ret = Type.Fighting;
-                    break;
-                case "Water":
-                    ret = Type.Water;
-                    break;
-                case "Electric":
-                    ret = Type.Electric;
-                    break;
-                case "Flying":
-                    ret = Type.Flying;
-                    break;
-                case "Grass":
-                    ret = Type.Grass;
-                    break;
-                case "Ground":
-                    ret = Type.Ground;
-                    break;
-                case "Psychic":
-                    ret = Type.Psychic;
-                    break;
-                case "Rock":
-                    ret = Type.Rock;
-                    break;
-                case "Ice":
-                    ret = Type.Ice;
-                    break;
-                case "Bug":
-                    ret = Type.Bug;
-                    break;
-                case "Dragon":
-                    ret = Type.Dragon;
-                    break;
-                case "Ghost":
-                    ret = Type.Ghost;
-                    break;
-                case "Dark":
-                    ret = Type.Dark;
-                    break;
-                case "Steel":
-                    ret = Type.Steel;
-                    break;
-                default:
-                    ret = Type.Blank;
-                    break;
+                return (Type)Enum.Parse(typeof(Type), val);
             }
-            return ret;
+            catch (Exception)
+            {
+                return Type.Blank;
+            }
+            
+            //switch (val)
+            //{
+            //    case "Normal":
+            //        ret = Type.Normal;
+            //        break;
+            //    case  "Fire":
+            //        ret = Type.Fire;
+            //        break;
+            //    case "Poison":
+            //        ret = Type.Poison;
+            //        break;
+            //    case "Fighting":
+            //        ret = Type.Fighting;
+            //        break;
+            //    case "Water":
+            //        ret = Type.Water;
+            //        break;
+            //    case "Electric":
+            //        ret = Type.Electric;
+            //        break;
+            //    case "Flying":
+            //        ret = Type.Flying;
+            //        break;
+            //    case "Grass":
+            //        ret = Type.Grass;
+            //        break;
+            //    case "Ground":
+            //        ret = Type.Ground;
+            //        break;
+            //    case "Psychic":
+            //        ret = Type.Psychic;
+            //        break;
+            //    case "Rock":
+            //        ret = Type.Rock;
+            //        break;
+            //    case "Ice":
+            //        ret = Type.Ice;
+            //        break;
+            //    case "Bug":
+            //        ret = Type.Bug;
+            //        break;
+            //    case "Dragon":
+            //        ret = Type.Dragon;
+            //        break;
+            //    case "Ghost":
+            //        ret = Type.Ghost;
+            //        break;
+            //    case "Dark":
+            //        ret = Type.Dark;
+            //        break;
+            //    case "Steel":
+            //        ret = Type.Steel;
+            //        break;
+            //    default:
+            //        ret = Type.Blank;
+            //        break;
+            //}
+            //return ret;
 
         }
 
@@ -177,33 +187,42 @@ namespace IAPL.Pokemon
         /// <returns>EXPType enumeration</returns>
         private EXPType convertToExp(String EXPT)
         {
-            EXPType ret = EXPType.Slow;
-
-            switch (EXPT)
+            //EXPType ret = EXPType.Slow;
+            try
             {
-                case "Erratic":
-                    ret = EXPType.Erratic;
-                    break;
-                case "Fast":
-                    ret = EXPType.Fast;
-                    break;
-                case "MedFast":
-                    ret = EXPType.MedFast;
-                    break;
-                case "MedSlow":
-                    ret = EXPType.MedSlow;
-                    break;
-                case "Slow":
-                    ret = EXPType.Slow;
-                    break;
-                case "Fluctuating":
-                    ret = EXPType.Fluctuating;
-                    break;
-                default:
-                    break;
+                return (EXPType)Enum.Parse(typeof(EXPType), EXPT);
             }
+            catch (Exception)
+            {
 
-            return ret;
+                return EXPType.Slow;
+            }
+            
+            //switch (EXPT)
+            //{
+            //    case "Erratic":
+            //        ret = EXPType.Erratic;
+            //        break;
+            //    case "Fast":
+            //        ret = EXPType.Fast;
+            //        break;
+            //    case "MedFast":
+            //        ret = EXPType.MedFast;
+            //        break;
+            //    case "MedSlow":
+            //        ret = EXPType.MedSlow;
+            //        break;
+            //    case "Slow":
+            //        ret = EXPType.Slow;
+            //        break;
+            //    case "Fluctuating":
+            //        ret = EXPType.Fluctuating;
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+            //return ret;
         }
         
     }
