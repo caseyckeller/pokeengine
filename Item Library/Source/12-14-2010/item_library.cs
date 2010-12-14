@@ -52,6 +52,7 @@ namespace IAPL.itemlib
 
         //Global variables.
         byte did_it_work;
+        
 
         //Global methods.
         byte did_it_work_check (byte did_it_work)
@@ -77,9 +78,7 @@ namespace IAPL.itemlib
                 
         public class heal
         {
-            
-
-            /// <summary>
+             /// <summary>
             /// Class for heal items, such as potions, paralyze heals, etc.
             /// </summary>
             /// <param name="pokemon_number">Each pokemon is assigned a number of 1-6. This represents that number</param>
