@@ -46,10 +46,14 @@ namespace IAPL.itemlib
          * WARNING
          * BEFORE USING ANY METHODS IN THIS LIBRARY, BE SURE TO RUN did_it_work_check FIRST
          * OR ELSE BAD THINGS MAY HAPPEN.
+         * FOR BEST RESULTS, MAKE IT THE FIRST THING THAT RUNS.
          */
 
+
+        //Global variables.
         byte did_it_work;
 
+        //Global methods.
         byte did_it_work_check (byte did_it_work)
             {
                 //check to see if did_it_work is set to 0
@@ -361,7 +365,7 @@ namespace IAPL.itemlib
             {
                 //normal revive
 
-                while (pokemon_status = 13 && current_hp < 0)
+                while (pokemon_status = 13 && current_hp =< 0) //Checking for current_hp as well as status may eliminate some potential bugs (or add more. lol)
                 {
                     heal_hp = max_hp / 2;
                     pokemon_status = 0;
@@ -379,7 +383,7 @@ namespace IAPL.itemlib
             {
                 //max revive
 
-                while (pokemon_status = 13 && current_hp < 0)
+                while (pokemon_status = 13 && current_hp =< 0)
                 {
                     heal_hp = max_hp;
                     pokemon_status = 0;
