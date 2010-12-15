@@ -8,10 +8,10 @@ namespace IAPL.Moves
     [Serializable]
     public class ActiveMove
     {
-        BaseMove bMove; //Base Move of this move
-        int maxPP; //max PP of this move
-        int currentPP; //current PP remaining of this move
-        byte PPUpUses; //number of times PPUp has been used on this move
+        public BaseMove bMove; //Base Move of this move
+        public int maxPP; //max PP of this move
+        public int currentPP; //current PP remaining of this move
+        public byte PPUpUses; //number of times PPUp has been used on this move
 
         public ActiveMove(ref BaseMove move)
         {
@@ -38,5 +38,6 @@ namespace IAPL.Moves
         {
             maxPP = Convert.ToInt32(Math.Floor(1.6 * Convert.ToDouble(bMove.basePP)));
         }
+
     }
 }

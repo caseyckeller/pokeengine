@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using IAPL.Pokemon;
 using IAPL.Moves;
+using IAPL.Moves.TypeStrengths;
 
 namespace IAPL.Pokemon
 {
@@ -78,6 +79,16 @@ namespace IAPL.Pokemon
         public NatureType nature;
 
         public int currentExp;
+
+        public String hiddenPowerType
+        {
+            get { return calcHiddenPowerType(); }
+        }
+
+        public int hiddenPowerPower
+        {
+            get { return calcHiddenPowerPower(); }
+        }
 
         //TODO find a way to randomly set these depending on level and basepokemon when creating a random instance
         public ActiveMove Move1;
@@ -375,6 +386,116 @@ namespace IAPL.Pokemon
 
             ret = Convert.ToInt32(Math.Floor(temp));
             return ret;
+        }
+
+        /// <summary>
+        /// Calculates hidden power type based on IVs
+        /// </summary>
+        /// <returns>String of hidden power type</returns>
+        private String calcHiddenPowerType()
+        {
+            int a = IVHP % 2;
+            int b = IVAttack % 2;
+            int c = IVDefense % 2;
+            int d = IVSpeed % 2;
+            int e = IVSPAtk % 2;
+            int f = IVSPDef % 2;
+            int hpTemp = 0;
+            String hiddenPower;
+
+            hpTemp = ((a+2*b+4*c+8*d+16*e+32*f)*15)/63;
+
+            switch (hpTemp)
+            {
+                case 0:
+                    hiddenPower = "Fighting";
+                    break;
+                case 1:
+                    hiddenPower = "Flying";
+                    break;
+                case 2:
+                    hiddenPower = "Poison";
+                    break;
+                case 3:
+                    hiddenPower = "Ground";
+                    break;
+                case 4:
+                    hiddenPower = "Rock";
+                    break;
+                case 5:
+                    hiddenPower = "Bug";
+                    break;
+                case 6:
+                    hiddenPower = "Ghost";
+                    break;
+                case 7:
+                    hiddenPower = "Steel";
+                    break;
+                case 8:
+                    hiddenPower = "Fire";
+                    break;
+                case 9:
+                    hiddenPower = "Water";
+                    break;
+                case 10:
+                    hiddenPower = "Grass";
+                    break;
+                case 11:
+                    hiddenPower = "Electric";
+                    break;
+                case 12:
+                    hiddenPower = "Psychic";
+                    break;
+                case 13:
+                    hiddenPower = "Ice";
+                    break;
+                case 14:
+                    hiddenPower = "Dragon";
+                    break;
+                case 15:
+                    hiddenPower = "Dark";
+                    break;
+                default:
+                    hiddenPower = "Blank";
+                    break;
+            }
+            return hiddenPower;
+        }
+
+        /// <summary>
+        /// Returns hidden power power
+        /// </summary>
+        /// <returns>int representing hidden power's power</returns>
+        private int calcHiddenPowerPower()
+        {
+            int a = IVHP % 4;
+            if (a == 2 || a == 3)
+                a = 1;
+            else a = 0;
+            int b = IVAttack % 4;
+            if (b == 2 || b == 3)
+                b = 1;
+            else b = 0;
+            int c = IVDefense % 4;
+            if (c == 2 || c == 3)
+                c = 1;
+            else c = 0;
+            int d = IVSpeed % 4;
+            if (d == 2 || d == 3)
+                d = 1;
+            else d = 0;
+            int e = IVSPAtk % 4;
+            if (e == 2 || e == 3)
+                e = 1;
+            else e = 0;
+            int f = IVSPDef % 4;
+            if (f == 2 || f == 3)
+                f = 1;
+            else f = 0;
+            int hpTemp;
+
+            hpTemp = 30 + ((a + 2 * b + 4 * c + 8 * d + 16 * e + 32 * f) * 40) / 63;
+            return hpTemp;
         }
     }
 }
