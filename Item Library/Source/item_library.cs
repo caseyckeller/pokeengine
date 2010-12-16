@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Contributers-
  * Brenden Homan (aka, bigplrbear)
  * Darkkal
+ * Ency Woz here
  * [insert contributer here]
  
  * If you see something in here that can cause a problem, PLEASE FOR THE LOVE OF GOD DONT JUST BITCH- FIX IT!
@@ -51,23 +52,25 @@ namespace IAPL.itemlib
 
 
         //Global variables.
-        byte did_it_work;
+        //bool is better Bear
+        bool did_it_work;
 
         //Global methods.
-        byte did_it_work_check (byte did_it_work)
+        bool did_it_work_check (bool did_it_work)
             {
-                //check to see if did_it_work is set to 0
+                //check to see if did_it_work is set to false
+            
                 //if not, change it
                 
                 //*WORK IN PROGRESS* VOTE NULL
 
-                 if (did_it_work !=0)
+                 if (did_it_work != false)
                  {
-                     did_it_work = 0;
+                     did_it_work = false;
                          return did_it_work;
                  }
 
-                 else if (did_it_work = 0)
+                 else if (did_it_work == false)
                  {
                      return did_it_work;
                  }
@@ -117,7 +120,7 @@ namespace IAPL.itemlib
 
             
 
-            void potion(byte pokemon_number, int max_hp, out int current_hp, byte potion_type, byte pokemon_status, out byte did_it_work)
+            void potion(byte pokemon_number, int max_hp, out int current_hp, byte potion_type, byte pokemon_status, out bool did_it_work)
             {
 
                 //Because C# is a bitch, and won't let me return multiple values in a method, I used the 'out' keyword instead of 'return'
@@ -128,11 +131,11 @@ namespace IAPL.itemlib
 
                 while (potion_type == 1)
                 {
-                    restore_hp == 20;
+                    restore_hp = 20;// == is for comparison, = is assignment
 
                     if (current_hp == max_hp)
                     {
-                        did_it_work == 1; //it didn't work
+                        did_it_work = true; //it didn't work // == is for comparison, = is assignment
                         return;
                     }
 
@@ -140,21 +143,21 @@ namespace IAPL.itemlib
 
                     if (current_hp > max_hp)
                     {
-                        current_hp == max_hp;
+                        current_hp = max_hp;// == is for comparison, = is assignment
                         return;
                     }
 
-                    did_it_work == 0; //it worked
+                    did_it_work = false; //it worked
                     return;
                 }
 
                 while (potion_type == 2)
                 {
-                    restore_hp == 50;
+                    restore_hp = 50; // == is for comparison, = is assignment
 
                     if (current_hp == max_hp)
                     {
-                        did_it_work == 1;
+                        did_it_work = true; // see? Booleans are so much nicer
                         return;
                         
                     }
@@ -163,11 +166,11 @@ namespace IAPL.itemlib
 
                     if (current_hp > max_hp)
                     {
-                        current_hp == max_hp;
+                        current_hp = max_hp;// == is for comparison, = is assignment
                         return;
                     }
 
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                     
                 }
@@ -179,7 +182,7 @@ namespace IAPL.itemlib
                     if (current_hp == max_hp)
                     {
 
-                        did_it_work == 1;
+                        did_it_work = true;
                         return;
                     }
 
@@ -187,22 +190,22 @@ namespace IAPL.itemlib
 
                     if (current_hp > max_hp)
                     {
-                        current_hp == max_hp;
+                        current_hp = max_hp;
                         return;
                     }
 
 
-                    did_it_work == 0;
+                    did_it_work = false;
                 }
 
                 while (potion_type == 4)
                 {
-                    restore_hp == max_hp;
+                    restore_hp = max_hp;
 
                     if (current_hp == max_hp)
                     {
 
-                        did_it_work == 1;
+                        did_it_work = true;
                         return;
                     }
 
@@ -210,24 +213,24 @@ namespace IAPL.itemlib
 
                     if (current_hp > max_hp)
                     {
-                        current_hp == max_hp;
+                        current_hp = max_hp;
                         return;
                     }
 
 
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                 }
 
                 while (potion_type == 5)
                 {
 
-                    restore_hp == max_hp;
+                    restore_hp = max_hp;
 
                     if (current_hp == max_hp)
                     {
 
-                       did_it_work == 1;
+                       did_it_work = true;
                        return;
                     }
 
@@ -235,18 +238,18 @@ namespace IAPL.itemlib
 
                     if (current_hp > max_hp)
                     {
-                        current_hp == max_hp;
+                        current_hp = max_hp;
                         return;
                     }
 
                     if (pokemon_status > 0)
                     {
-                        pokemon_status == 0;
+                        pokemon_status = 0;
                         return;
                     }
 
 
-                   did_it_work == 0;
+                   did_it_work = false;
                    return;
                 }
             }
@@ -259,7 +262,7 @@ namespace IAPL.itemlib
                 {
                     pokemon_status = pokemon_status;
                        
-                    did_it_work == 1;
+                    did_it_work = true;
                     return;
                 }
 
@@ -267,7 +270,7 @@ namespace IAPL.itemlib
                 {
                     pokemon_status = 0;
                                                
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                 }
             }
@@ -277,14 +280,14 @@ namespace IAPL.itemlib
                 //heal poison
                 if (pokemon_status != 2)
                 {
-                    did_it_work == 1;
+                    did_it_work = true;
                     return;
                 }
 
                 else if (pokemon_status == 2)
                 {
                     pokemon_status = 0;
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                 }
             }
@@ -294,14 +297,14 @@ namespace IAPL.itemlib
                 //wake up pokemon
                 if (pokemon_status != 3)
                 {
-                    did_it_work == 1;
+                    did_it_work = true;
                     return;
                 }
 
                 else if (pokemon_status == 3)
                 {
                     pokemon_status = 0;
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                 }
             }
@@ -312,14 +315,14 @@ namespace IAPL.itemlib
 
                 if (pokemon_status != 4)
                 {
-                    did_it_work == 1;
+                    did_it_work = true;
                     return;
                 }
 
                 else if (pokemon_status == 4)
                 {
                     pokemon_status = 0;
-                    did_it_work == 0;
+                    did_it_work = false;
                     return;
                 }
             }
@@ -330,20 +333,20 @@ namespace IAPL.itemlib
 
                 if (pokemon_status != 5)
                 {
-                    did_it_work_ == 1;
+                    did_it_work_ = true;
                     return;
                 }
 
                 else if (pokemon_status == 5)
                 {
                     pokemon_status = 0;
-                    did_it_work = 0;
+                    did_it_work = false;
                     return;
 
                 }
             }
 
-            void full_heal (byte pokemon_number, out byte pokemon_status, out byte did_it_work)
+            void full_heal (byte pokemon_number, out byte pokemon_status, out bool did_it_work)
             {
                 //full heal
                 
@@ -353,7 +356,7 @@ namespace IAPL.itemlib
                 while (pokemon_status != 0)
                 {
                     pokemon_status = 0;
-                    did_it_work = 0;
+                    did_it_work = false;
                     return;
                 }
 
@@ -365,12 +368,12 @@ namespace IAPL.itemlib
             {
                 //normal revive
 
-                while (pokemon_status = 13 && current_hp =< 0) //Checking for current_hp as well as status may eliminate some potential bugs (or add more. lol)
+                while (pokemon_status = 13 && current_hp <= 0) //Checking for current_hp as well as status may eliminate some potential bugs (or add more. lol)
                 {
                     heal_hp = max_hp / 2;
                     pokemon_status = 0;
-                    current_hp == heal_hp;
-                    did_it_work = 0;
+                    current_hp = heal_hp;
+                    did_it_work = false;
                     return;
                 }
 
@@ -383,20 +386,23 @@ namespace IAPL.itemlib
             {
                 //max revive
 
-                while (pokemon_status = 13 && current_hp =< 0)
+                while (pokemon_status = 13 && current_hp <= 0) //<= not =<
                 {
                     heal_hp = max_hp;
                     pokemon_status = 0;
-                    current_hp == heal_hp;
-                    did_it_work = 0;
+                    current_hp = heal_hp;
+                    did_it_work = false;
                     return;
                 }
 
-                did_it_work = 1;
+                did_it_work = true;
                 return;
             }
 
            }
+
+        //I don't know how held items will work, so bleh
+        //Stopped editing here - Ency
 
         public class hold
         {

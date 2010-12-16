@@ -70,6 +70,10 @@ namespace IAPL.Pokemon
         {
             get { return nextLevelAt - currentExp; }
         }
+        public bool isFainted
+        {
+            get { return (currentHP <= 0); }
+        }
 
         public BasePokemon BasePoke;
 
@@ -90,6 +94,8 @@ namespace IAPL.Pokemon
             get { return calcHiddenPowerPower(); }
         }
 
+        public bool isShiny;
+
         //TODO find a way to randomly set these depending on level and basepokemon when creating a random instance
         public ActiveMove Move1;
         public ActiveMove Move2;
@@ -106,13 +112,14 @@ namespace IAPL.Pokemon
         public ActivePokemon( ref BasePokemon inBase )
         {
             //TODO these need to be randomized
-            IVHP = 0;
-            IVAttack = 0;
-            IVDefense = 0;
-            IVSPAtk = 0;
-            IVSPDef = 0;
-            IVSpeed = 0;
-            nature = NatureType.Serious;
+            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            IVHP = random.Next(0,31);
+            IVAttack = random.Next(0, 31);
+            IVDefense = random.Next(0, 31);
+            IVSPAtk = random.Next(0, 31);
+            IVSPDef = random.Next(0, 31);
+            IVSpeed = random.Next(0, 31);
+            nature = (NatureType)random.Next(0, 24);
 
             EVHP = 0;
             EVAttack = 0;
