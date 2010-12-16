@@ -41,6 +41,7 @@ namespace IAPL.Pokemon
         public int substituteHealth; //the health of the pokemon's substitue, -1 for no substitute
         public bool trapped; //whether the pokemon is trapped, ie can not switch or run
         public bool safeguarded; //if true then the move that turn is ineffective
+        public int badPoisonLevel; //increases by one each turn, does more damage
 
 
         private int atk;
@@ -201,6 +202,12 @@ namespace IAPL.Pokemon
         {
             get { return pokemon.HP; }
         } // get the max health of the pokemon
+
+        public ActiveMove[] move
+        {
+            get { return pokemon.move; }
+            set { pokemon.move = value; }
+        }
         #endregion
 
         /// <summary>
@@ -236,6 +243,7 @@ namespace IAPL.Pokemon
             substituteHealth = -1;
             trapped = false;
             safeguarded = false;
+            badPoisonLevel = -1;
 
             attackLevel = 0;
             defenseLevel = 0;
@@ -244,6 +252,7 @@ namespace IAPL.Pokemon
             speedLevel = 0;
             evasionLevel = 0;
             accuracyLevel = 0;
+            
         }
 
         #region inflict_status
@@ -251,6 +260,8 @@ namespace IAPL.Pokemon
         {
             if(pokemon.status == MajorStatus.None)
             {
+                //half attack stat
+                atkModifier = atkModifier / 2;
                 pokemon.status = MajorStatus.Burned;
             }
         }
@@ -284,6 +295,7 @@ namespace IAPL.Pokemon
             if (pokemon.status == MajorStatus.None)
             {
                 pokemon.status = MajorStatus.BadPoisoned;
+                badPoisonLevel = 1;
             }
         }
 
@@ -346,7 +358,7 @@ namespace IAPL.Pokemon
 
         public void partiallyTrap()
         {
-            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            Random random = new Random();
             int val = random.Next(4 - 5);
             partialTrapRemaining = val;
         }
@@ -366,7 +378,7 @@ namespace IAPL.Pokemon
 
         public void taunt()
         {
-            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            Random random = new Random();
             int val = random.Next(2 - 4);
             tauntRemaining = val;
         }
@@ -437,7 +449,7 @@ namespace IAPL.Pokemon
             double chance = target.chanceToHit(this, attack.bMove);
             if(chance < 1.0 && chance > 0.0)
             {
-                Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+                Random random = new Random();
                 double roll = random.NextDouble();
                 if (roll < chance)
                 {
@@ -480,7 +492,7 @@ namespace IAPL.Pokemon
 
             if (strength > 0.0)
             {
-                Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+                Random random = new Random();
                 double modifier = Convert.ToDouble(random.Next(85, 100)) / 100.0;
                 if(attack.bMove.moveKind == "Special")
                 {
@@ -524,7 +536,7 @@ namespace IAPL.Pokemon
 
             if (strength > 0.0)
             {
-                Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+                Random random = new Random();
                 double modifier = Convert.ToDouble(random.Next(85, 100)) / 100.0;
                 if (attack.bMove.moveKind == "Special")
                 {
@@ -558,6 +570,11 @@ namespace IAPL.Pokemon
             target.currentHealth -= amount;
 
             //show message saying it hit
+        }
+
+        public void heal(int amount)
+        {
+            currentHealth += amount;
         }
 
         public double typeModifier( ActiveMove attack, BattlePokemon target)

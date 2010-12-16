@@ -6,7 +6,7 @@ using IAPL.Pokemon;
 
 namespace IAPL.Trainers
 {
-    class Trainer
+    public class Trainer
     {
         public ActivePokemon[] currentPokemon;
         public int money;
@@ -35,7 +35,7 @@ namespace IAPL.Trainers
             name = "Default Name";
             money = 0;
             isMale = true;
-            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            Random random = new Random();
             trainerID = Math.Abs(random.Next());
             currentPokemon = new ActivePokemon[6];
         }

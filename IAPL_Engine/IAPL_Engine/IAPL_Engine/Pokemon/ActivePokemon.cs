@@ -36,6 +36,7 @@ namespace IAPL.Pokemon
 
         public int currentHP;
         public MajorStatus status;
+        public String ability;
 
         //current stats are calculated from base stats, IVs, and EVs, can not be set
         public int attack
@@ -97,10 +98,7 @@ namespace IAPL.Pokemon
         public bool isShiny;
 
         //TODO find a way to randomly set these depending on level and basepokemon when creating a random instance
-        public ActiveMove Move1;
-        public ActiveMove Move2;
-        public ActiveMove Move3;
-        public ActiveMove Move4;
+        public ActiveMove[] move;
 
         //TODO add a held item field
 
@@ -112,7 +110,7 @@ namespace IAPL.Pokemon
         public ActivePokemon( ref BasePokemon inBase )
         {
             //TODO these need to be randomized
-            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            Random random = new Random();
             IVHP = random.Next(0,31);
             IVAttack = random.Next(0, 31);
             IVDefense = random.Next(0, 31);
@@ -136,6 +134,12 @@ namespace IAPL.Pokemon
             level = 1;
 
             currentHP = HP;
+
+            move = new ActiveMove[4];
+            move[0] = null;
+            move[1] = null;
+            move[2] = null;
+            move[3] = null;
         }
 
         /// <summary>

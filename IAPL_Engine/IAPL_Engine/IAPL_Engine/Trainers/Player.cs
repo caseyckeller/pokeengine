@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IAPL.Trainers
 {
-    class Player : Trainer
+    public class Player : Trainer
     {
         //TODO add some way to hold badges
         //TODO add more complex inventory
@@ -17,7 +17,7 @@ namespace IAPL.Trainers
 
         public Player() : base()
         {
-            Random random = new Random(Convert.ToInt32(DateTime.Now.Ticks));
+            Random random = new Random();
             //TODO replace this random stuff
             secretID = Math.Abs(random.Next());
             secretIDTwo = Math.Abs(random.Next());
