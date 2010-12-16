@@ -114,12 +114,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battle\PokeBattle.cs" />
     <Compile Include="Globals\Globals.cs" />
     <Compile Include="Items\Items.cs" />
     <Compile Include="Items\Potion.cs" />
     <Compile Include="Moves\ActiveMove.cs" />
     <Compile Include="Moves\MoveList.cs" />
     <Compile Include="Moves\TypeStrengths.cs" />
+    <Compile Include="Trainers\Player.cs" />
+    <Compile Include="Trainers\Trainer.cs" />
     <Compile Include="PokeDraw.cs" />
     <Compile Include="Pokemon\ActivePokemon.cs" />
     <Compile Include="Moves\BaseMove.cs" />
