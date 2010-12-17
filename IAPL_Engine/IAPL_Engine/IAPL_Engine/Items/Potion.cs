@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ *This has been depreciated. Please use items.heal.potion instead
+ *-bigplrbear
+ *dec. 17 2010
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
