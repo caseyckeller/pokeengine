@@ -349,13 +349,13 @@ namespace IAPL.Battle
             {
                 if (PlayerChoice.move != null)
                 {
-                    runMoveScript(PlayerChoice);
+                    runMoveScript(PlayerChoice, currentPlayerPokemon, currentOpponentPokemon);
 
                 }
                 //TODO check faint
                 if (OpponentChoice.move != null)
                 {
-                    runMoveScript(OpponentChoice);
+                    runMoveScript(OpponentChoice, currentOpponentPokemon, currentPlayerPokemon);
                 }
             }
             //else the opponent goes first
@@ -363,19 +363,19 @@ namespace IAPL.Battle
             {
                 if (OpponentChoice.move != null)
                 {
-                    runMoveScript(OpponentChoice);
+                    runMoveScript(OpponentChoice, currentOpponentPokemon, currentPlayerPokemon);
                 }
                 //TODO check faint
                 if (PlayerChoice.move != null)
                 {
-                    runMoveScript(PlayerChoice);
+                    runMoveScript(PlayerChoice, currentPlayerPokemon, currentOpponentPokemon);
 
                 }
             }
 
         }
 
-        public void runMoveScript(BattleChoice choice)
+        public void runMoveScript(BattleChoice choice, BattlePokemon inAttacker, BattlePokemon inDefender)
         {
             ScriptEngine engine = Python.CreateEngine();
             ScriptRuntime runtime = engine.Runtime;
@@ -385,8 +385,8 @@ namespace IAPL.Battle
             ////////////
             String scriptPath = Path.Combine(rootDir, "Moves\\Scripts\\" + choice.move.bMove.name + ".py");
             AddAssemblies(runtime);
-            scope.SetVariable("attacker", currentPlayerPokemon);
-            scope.SetVariable("defender", currentOpponentPokemon);
+            scope.SetVariable("attacker", inAttacker);
+            scope.SetVariable("defender", inDefender);
             scope.SetVariable("move", choice.move);
             source = engine.CreateScriptSourceFromFile(scriptPath);
             source.Execute(scope);
