@@ -1,4 +1,10 @@
 ﻿
+//Hey guys, this has been depreciated as of 12/17/2010
+//So, you might wanna grab some of these variables (if you're using them) and stick 'em somewhere else
+//For items, use IAPL.items.[item type].[item name], eg, IAPL.items.heal.potion
+//also, see items.cs
+//-bigplrbear
+
 /*
 * Main Pokemon Library for the IAPL
 *

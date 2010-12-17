@@ -11,6 +11,7 @@ namespace IAPL.Trainers
         //TODO add more complex inventory
         //TODO maybe story variables?
         //TODO add boxxed pokemon
+        public char player_name; //seriously, has nobody even thought of this yet?
         public int secretID;
         public int secretIDTwo;
         public String pDexType; //for national and regional pokedexes if you wanna use them
