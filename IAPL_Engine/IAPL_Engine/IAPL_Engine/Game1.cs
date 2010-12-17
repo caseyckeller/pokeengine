@@ -33,6 +33,12 @@ namespace IAPL_Engine
         Player player = new Player();
         KeyboardHandler keyboardHandler;
 
+        #region FPS Benchmarking
+        int frameRate = 0;
+        int frameCounter = 0;
+        TimeSpan elapsedTime = TimeSpan.Zero;
+        #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -89,6 +95,8 @@ namespace IAPL_Engine
 
             keyboardHandler.ProcessKeyboard();
 
+            UpdateFPS(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -97,10 +105,11 @@ namespace IAPL_Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            //map.drawMap(spriteBatch);
+
             drawer.drawTiles();
             DrawPlayer();
             DrawDebug();
+
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -110,9 +119,13 @@ namespace IAPL_Engine
         //This will just display Debug Info, will be modified for whatever needs
         public void DrawDebug()
         {
+            frameCounter++;
+
+            string fps = string.Format("fps: {0}", frameRate);
+
+            spriteBatch.DrawString(font, fps, new Vector2(0, 0), Color.White);
             spriteBatch.DrawString(font, "(" + player.Rect.X + "," + player.Rect.Y + ")", new Vector2(player.Rect.X - 30, player.Rect.Y + 30), Color.White);
-            spriteBatch.DrawString(font, "moveCounter: " + player.moveCounter, new Vector2(0, 0), Color.White);
-            spriteBatch.DrawString(font, "isMoving: " + player.isMoving, new Vector2(0, 30), Color.White);
+            
         }
 
         //This sets up the player rectangle, which holds information like Texture2D's and Position
@@ -128,6 +141,19 @@ namespace IAPL_Engine
         public void DrawPlayer()
         {
             spriteBatch.Draw(player.Texture, player.Rect, Color.White);
+        }
+
+        public void UpdateFPS(GameTime gameTime)
+        {
+            elapsedTime += gameTime.ElapsedGameTime;
+
+            if (elapsedTime > TimeSpan.FromSeconds(1))
+            {
+                elapsedTime -= TimeSpan.FromSeconds(1);
+                frameRate = frameCounter;
+                frameCounter = 0;
+            }
+
         }
         
     }
