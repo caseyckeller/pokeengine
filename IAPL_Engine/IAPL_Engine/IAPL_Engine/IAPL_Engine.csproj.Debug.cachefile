@@ -1,4 +1,3 @@
-Content\font.xnb
 Content\WorldObject\Player\debug_sprite_player.xnb
 Content\WorldObject\Zone\Tile\debug_grass_tile.xnb
 Content\WorldObject\Zone\Tile\debug_wall_tile.xnb
@@ -6,3 +5,4 @@ Content\WorldObject\Zone\Tile\debug_black_tile.xnb
 Content\WorldObject\Zone\Tile\debug_brick_tile.xnb
 Content\WorldObject\Zone\Tile\debug_sand_tile.xnb
 Content\WorldObject\Zone\Tile\debug_dirt_tile.xnb
+Content\font.xnb
