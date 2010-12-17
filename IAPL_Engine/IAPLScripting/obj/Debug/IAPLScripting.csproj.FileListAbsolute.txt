@@ -1,0 +1,10 @@
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\IAPLScripting.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\IAPLScripting.pdb
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\IronPython.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\Microsoft.Scripting.Debugging.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\bin\Debug\IronPython.xml
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\obj\Debug\IAPLScripting.dll
+C:\Users\Encylo\Documents\IAPL\IAPL_Engine\IAPLScripting\obj\Debug\IAPLScripting.pdb
