@@ -31,6 +31,7 @@ namespace IAPL_Engine
         #endregion
 
         Player player = new Player();
+        KeyboardHandler keyboardHandler;
 
         public Game1()
         {
@@ -56,6 +57,8 @@ namespace IAPL_Engine
             drawer.Content = Content;
             drawer.spriteBatch = spriteBatch;
             //drawer.setMap(ref map);
+
+            keyboardHandler = new KeyboardHandler(player);
 
             base.Initialize();
         }
@@ -83,8 +86,8 @@ namespace IAPL_Engine
 
         protected override void Update(GameTime gameTime)
         {
-            
-            ProcessKeyboard();
+
+            keyboardHandler.ProcessKeyboard();
 
             base.Update(gameTime);
         }
@@ -110,35 +113,6 @@ namespace IAPL_Engine
             spriteBatch.DrawString(font, "(" + player.Rect.X + "," + player.Rect.Y + ")", new Vector2(player.Rect.X - 30, player.Rect.Y + 30), Color.White);
             spriteBatch.DrawString(font, "moveCounter: " + player.moveCounter, new Vector2(0, 0), Color.White);
             spriteBatch.DrawString(font, "isMoving: " + player.isMoving, new Vector2(0, 30), Color.White);
-        }
-
-        //This will process all the key functions
-        public void ProcessKeyboard()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape)) //exit
-                this.Exit();
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Up)) //move up
-                if (!player.isMoving)
-                    if(!player.CheckCollisions("UP", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
-                        player.StartMove("UP");
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Down)) //move down
-                if (!player.isMoving)
-                    if(!player.CheckCollisions("DOWN", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
-                        player.StartMove("DOWN");
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Left)) //move left
-                if (!player.isMoving)
-                    if (!player.CheckCollisions("LEFT", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
-                        player.StartMove("LEFT");
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Right)) // move right
-                if (!player.isMoving)
-                    if (!player.CheckCollisions("RIGHT", graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight))
-                        player.StartMove("RIGHT");
-
-            player.ProcessMovements();
         }
 
         //This sets up the player rectangle, which holds information like Texture2D's and Position

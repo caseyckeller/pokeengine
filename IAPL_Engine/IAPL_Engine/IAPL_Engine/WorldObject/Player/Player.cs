@@ -85,6 +85,7 @@ namespace IAPL_Engine
             }
         }
 
+        
         public void ProcessMovements()
         {
             if (moveCounter > 0)
@@ -123,44 +124,6 @@ namespace IAPL_Engine
                 direction = "NONE";
             }
         }
-
-        //  true -> There is a collision
-        //  false -> There is no collision
-        public bool CheckCollisions(string d, int mapWidth, int mapHeight)
-        {
-            switch (d)
-            {
-                case "LEFT":
-                    {
-                        if(Rect.Left > 0)
-                            return false;
-
-                        return true;
-                    }
-                case "RIGHT":
-                    {
-                        if (Rect.Right < mapWidth)
-                            return false;
-
-                        return true;
-                    }
-                case "UP":
-                    {
-                        if (Rect.Top > 0)
-                            return false;
-
-                        return true;
-                    }
-                case "DOWN":
-                    {
-                        if (Rect.Bottom < mapHeight)
-                            return false;
-
-                        return true;
-                    }
-            }
-
-            return false;
-        }
+         
     }
 }
