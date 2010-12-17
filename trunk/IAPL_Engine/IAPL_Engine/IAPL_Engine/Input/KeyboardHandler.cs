@@ -42,6 +42,12 @@ namespace IAPL_Engine
                 if (!player.isMoving)
                         player.StartMove("RIGHT");
 
+            /* if (keyboard.getstate().iskeydown(keys.rightshift)) //Right shift. equivalent of 'select' in the games. -bigplrbear
+                    if (!keyitem.registered) //Also, some example usage. herp derp
+                        console.writeline "Nothing is registered for the shift key \n";
+             *      else if (keyitem.registered)
+             *          [insert over 9000 while/if/for loops here for key items]
+             * */
 
             player.ProcessMovements();
         }
