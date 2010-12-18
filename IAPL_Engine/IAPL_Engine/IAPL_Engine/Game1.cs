@@ -11,9 +11,6 @@ using Microsoft.Xna.Framework.Media;
 using IAPL.Pokemon_Library;
 using IAPL.Map;
 
-// btw im back lol
-// welcome back. Was beginning to wonder if you had fallen in or not.
-// hello? im here, lol
 namespace IAPL_Engine
 {
 
