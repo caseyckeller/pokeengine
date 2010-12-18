@@ -98,6 +98,8 @@ namespace IAPL.itemlib
             }
          * 
          * */
+
+
                 
         public class heal
         {
@@ -142,7 +144,7 @@ namespace IAPL.itemlib
             //when using methods from this class, be sure that the last argument is a "false"!
 
             
-
+            
             void potion(byte pokemon_number, int max_hp, out int current_hp, byte potion_type, byte pokemon_status, out bool did_it_work /*, out byte is_valid*/)
             {
 
@@ -285,6 +287,7 @@ namespace IAPL.itemlib
                 }
             }
 
+
             void par_heal (byte pokemon_number, out byte pokemon_status, out bool did_it_work)
             {
                 //Paralyze heal
@@ -297,7 +300,7 @@ namespace IAPL.itemlib
                     return;
                 }
 
-                else if (pokemon_status = 1)
+                else if (pokemon_status == 1)
                 {
                     pokemon_status = 0;
                                                
@@ -364,7 +367,7 @@ namespace IAPL.itemlib
 
                 if (pokemon_status != 5)
                 {
-                    did_it_work_ = false;
+                    did_it_work = false;
                     return;
                 }
 
@@ -399,7 +402,7 @@ namespace IAPL.itemlib
             {
                 //normal revive
 
-                while (pokemon_status = 13 && current_hp <= 0) //Checking for current_hp as well as status may eliminate some potential bugs (or add more. lol)
+                while (pokemon_status == 13 && current_hp <= 0) //Checking for current_hp as well as status may eliminate some potential bugs (or add more. lol)
 
                 {
                     heal_hp = max_hp / 2;
@@ -420,7 +423,7 @@ namespace IAPL.itemlib
 
                 
 
-                while (pokemon_status = 13 && current_hp <= 0)
+                while (pokemon_status == 13 && current_hp <= 0)
                 {
                     
                     pokemon_status = 0;
@@ -461,7 +464,7 @@ namespace IAPL.itemlib
 
                 else if (pokemon_number == 1 && item_held == 1) //if the first pokemon in your party is holding the item
                 {
-                    prize_money == prize_money * 2;         //automagically assume they're the first in battle
+                    prize_money = prize_money * 2;         //automagically assume they're the first in battle
 
                     return prize_money;
                 }
@@ -473,9 +476,11 @@ namespace IAPL.itemlib
 
                 else if (pokemon_number != 1 && sent_to_battle == 1)
                 {
-                    prize_money == prize_money * 2; //extra money if sent to battle :p
+                    prize_money = prize_money * 2; //extra money if sent to battle :p
                     return prize_money;
                 }
+
+                return 0; //prolly didnt work
             }
 
 
