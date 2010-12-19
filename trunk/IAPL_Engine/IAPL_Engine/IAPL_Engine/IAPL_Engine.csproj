@@ -117,7 +117,6 @@
     <Compile Include="Battle\BattleChoice.cs" />
     <Compile Include="Battle\PokeBattle.cs" />
     <Compile Include="Globals\Globals.cs" />
-    <Compile Include="IAPL\RNG.cs" />
     <Compile Include="Items\Items.cs" />
     <Compile Include="Items\Potion.cs" />
     <Compile Include="Input\KeyboardHandler.cs" />
@@ -140,6 +139,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="WorldObject\Zone\Tile\Tile.cs" />
     <Compile Include="WorldObject\WorldObject.cs" />
+    <Compile Include="WorldObject\Zone\World.cs" />
     <Compile Include="WorldObject\Zone\Zone.cs" />
   </ItemGroup>
   <ItemGroup>
