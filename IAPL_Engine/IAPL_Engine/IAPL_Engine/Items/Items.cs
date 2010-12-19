@@ -37,7 +37,7 @@ namespace IAPL.itemlib
 
         public class heal : items
         {
-            public class potion : items
+            public class Potion : items
             {
 
 

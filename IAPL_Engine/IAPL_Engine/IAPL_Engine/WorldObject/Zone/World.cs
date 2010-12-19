@@ -16,6 +16,7 @@ namespace IAPL.Map
     /// it will also show which zones are adjacent to the current zone
     /// This means both the current and adjactent zones need to be in memory, for smooth transitions
     /// </summary>
+    [Serializable]
     public class World
     {
         public String worldName;
@@ -39,12 +40,22 @@ namespace IAPL.Map
             return currentArea;
         }
 
+
+        /// <summary>
+        /// Add a zone to the world
+        /// </summary>
+        /// <param name="inZone"></param>
+        public void addZone(Zone inZone)
+        {
+
+        }
+
         public void getBounds()
         {
             string rootDir = AppDomain.CurrentDomain.BaseDirectory;
-            string rulesDir = Path.Combine(rootDir, "Zones");
+            string zonesDir = Path.Combine(rootDir, "Zones");
 
-            foreach (string path in Directory.GetFiles(rulesDir))
+            foreach (string path in Directory.GetFiles(zonesDir))
                 if (path.ToLower().EndsWith(".zon"))
                 {
                     //deserialize the zone

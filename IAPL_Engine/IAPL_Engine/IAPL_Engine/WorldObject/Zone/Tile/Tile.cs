@@ -10,7 +10,7 @@ using IAPL_Engine.Globals;
 
 namespace IAPL.Map
 {
-    public enum TType { Black, Grass, Dirt, Sand, Brick, Wall }; //TODO add more tile types
+    //public enum TType { Black, Grass, Dirt, Sand, Brick, Wall }; //TODO add more tile types
     public enum Direction { North, East, South, West };
     
     public class Tile
@@ -21,7 +21,8 @@ namespace IAPL.Map
         private bool randomEncounter; //whether random encounters can occur on this tile
         private bool ramp; //whether the tile is a bike ramp
         private bool occupied;
-        public TType tileType;
+        //public TType tileType;
+        public String tileType;
         //private Texture2D tileTexture;
 
         //Note, X, Y, and Z must be global in relation to all other tiles of the map
@@ -41,7 +42,7 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
-            tileType = TType.Black;
+            tileType = "debug_black_tile.png";
 
             //MUST BE MADE UNIQUE
             //X = 0;
@@ -59,7 +60,7 @@ namespace IAPL.Map
             randomEncounter = false;
             ramp = false;
             occupied = false;
-            tileType = TType.Black;
+            tileType = "debug_black_tile.png";
 
             //MUST BE MADE UNIQUE
             //X = inX;
@@ -228,7 +229,11 @@ namespace IAPL.Map
             return val;
         }
 
-        public TType getTType()
+        /*public TType getTType()
+        {
+            return tileType;
+        }*/
+        public String getTType()
         {
             return tileType;
         }
