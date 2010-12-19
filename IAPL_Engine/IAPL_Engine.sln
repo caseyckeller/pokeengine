@@ -13,6 +13,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Pokemon", "Pokemon\Pokemon.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAPLScripting", "IAPLScripting\IAPLScripting.csproj", "{1A8E2307-1DCE-4075-8B6B-5981399058FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEditor", "MapEditor\MapEditor.csproj", "{CF2F36AE-FE1D-4E14-AF11-A33886F03976}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,16 @@ Global
 		{1A8E2307-1DCE-4075-8B6B-5981399058FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1A8E2307-1DCE-4075-8B6B-5981399058FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1A8E2307-1DCE-4075-8B6B-5981399058FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Debug|x86.ActiveCfg = Debug|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Debug|x86.Build.0 = Debug|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Release|Any CPU.ActiveCfg = Release|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Release|x86.ActiveCfg = Release|x86
+		{CF2F36AE-FE1D-4E14-AF11-A33886F03976}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

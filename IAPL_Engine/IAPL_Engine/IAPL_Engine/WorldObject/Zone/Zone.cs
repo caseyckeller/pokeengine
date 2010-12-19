@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-//this is a change
 
 namespace IAPL.Map
 {
@@ -24,7 +23,7 @@ namespace IAPL.Map
             }
         }
 
-        private String zoneName;  //this is the name of the zone, generally "route xxxx"
+        public String zoneName;  //this is the name of the zone, generally "route xxxx"
         //TODO make way to store adjacent zones
         public Tile[,] tile; //a 2D array of nodes, these are individual tiles of a map
         //starts at 0,0 for bottom left corner and is x,y
@@ -34,8 +33,8 @@ namespace IAPL.Map
 
         //private Scenery scenery;
 
-        private int globalX; //global X coordinate of tile [0][0]
-        private int globalY; //global Y coordinate of tile [0][0]
+        public int globalX; //global X coordinate of tile [0][0]
+        public int globalY; //global Y coordinate of tile [0][0]
 
         #region Constructors
         //default constructor makes a 50x50 zone
