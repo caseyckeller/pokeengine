@@ -448,7 +448,7 @@ namespace IAPL_Engine.IAPL
 
                 }
 
-            } while (true);
+            } while (!_dispose);
 
         }
 
