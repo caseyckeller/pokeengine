@@ -61,6 +61,18 @@ namespace IAPL.Map
 
         }
 
+        //constructor when given size and name
+        public Zone(String name, int inX, int inY)
+        {
+            zoneName = name;
+            //these must be changed to global unless only one zone exists
+            globalX = 0;
+            globalY = 0;
+            tile = new Tile[inX, inY];
+            allToDefault();
+
+        }
+
         //constructor when given global X and Y coordinates and size
         public Zone(int inX, int inY, int inXCoord, int inYCoord)
         {
@@ -145,7 +157,7 @@ namespace IAPL.Map
                 for (int b = 5; b <= 10; b++)
                 {
                     tile[a, b].setClear();
-                    tile[a, b].tileType = TType.Grass;
+                    tile[a, b].tileType = "debug_grass_tile.png";
                 }
             }
         }

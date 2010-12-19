@@ -56,7 +56,7 @@ namespace IAPL_Engine
             player.setPlayerMap(ref map);
             #endregion
 
-            drawer = new PokeDraw();
+            drawer = new PokeDraw(GraphicsDevice);
             drawer.Content = Content;
             drawer.spriteBatch = spriteBatch;
             //drawer.setMap(ref map);

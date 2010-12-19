@@ -1,3 +1,4 @@
+Content\font.xnb
 Content\WorldObject\Player\debug_sprite_player.xnb
 Content\WorldObject\Zone\Tile\debug_grass_tile.xnb
 Content\WorldObject\Zone\Tile\debug_wall_tile.xnb
@@ -5,4 +6,10 @@ Content\WorldObject\Zone\Tile\debug_black_tile.xnb
 Content\WorldObject\Zone\Tile\debug_brick_tile.xnb
 Content\WorldObject\Zone\Tile\debug_sand_tile.xnb
 Content\WorldObject\Zone\Tile\debug_dirt_tile.xnb
-Content\font.xnb
+Moves\Scripts\Tackle.py
+Resources\Textures\debug_black_tile.png
+Resources\Textures\debug_wall_tile.png
+Resources\Textures\debug_brick_tile.png
+Resources\Textures\debug_dirt_tile.png
+Resources\Textures\debug_grass_tile.png
+Resources\Textures\debug_sand_tile.png
