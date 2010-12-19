@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading; //I noticed some references to this, so I added it up here! -bigplrbear
+using System.Threading;
 
 namespace IAPL_Engine.IAPL
 {
@@ -347,15 +347,31 @@ namespace IAPL_Engine.IAPL
             //Create the return value.
             double _retVal = 1;
 
-            //Setup the for loop
-
-            for (int i = start; i >= 1; i += -1)
+            //If we start at 0, 0! = 1, generic math rule.
+            if (start == 0)
             {
-                //Multiply the return value by the term.
-                _retVal *= i;
+                return 1;
+            }
+                else if (start > 0)
+            {
+                //Setup the for loop
+                for (int i = start; i >= 1; i += -1)
+                {
+                    //Multiply the return value by the term.
+                    _retVal *= i;
+
+                }
 
             }
 
+            else
+            {
+
+                //Throw an exception.
+                throw new ArgumentException("You cannot have a negative number!", "start");
+
+            }
+            
             //Return it.
             return _retVal;
 
