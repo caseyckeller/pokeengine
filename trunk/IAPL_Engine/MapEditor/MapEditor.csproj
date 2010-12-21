@@ -52,19 +52,19 @@
     <Compile Include="editableTile.Designer.cs">
       <DependentUpon>editableTile.cs</DependentUpon>
     </Compile>
-    <Compile Include="floorControl.cs">
+    <Compile Include="Floors\floorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="floorControl.Designer.cs">
+    <Compile Include="Floors\floorControl.Designer.cs">
       <DependentUpon>floorControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Floors.cs">
+    <Compile Include="Floors\Floors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Floors.Designer.cs">
+    <Compile Include="Floors\Floors.Designer.cs">
       <DependentUpon>Floors.cs</DependentUpon>
     </Compile>
-    <Compile Include="FloorsList.cs" />
+    <Compile Include="Floors\FloorsList.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,10 +76,10 @@
     <EmbeddedResource Include="editableTile.resx">
       <DependentUpon>editableTile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="floorControl.resx">
+    <EmbeddedResource Include="Floors\floorControl.resx">
       <DependentUpon>floorControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Floors.resx">
+    <EmbeddedResource Include="Floors\Floors.resx">
       <DependentUpon>Floors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
