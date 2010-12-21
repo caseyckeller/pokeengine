@@ -15,9 +15,12 @@ namespace MapEditor
         World theWorld;
         Tile currentSelection;
         Zone tempZone;
+        Floors editFloors;
         public editorTop()
         {
             theWorld = new World();
+            editFloors = new Floors();
+            editFloors.Hide();
             InitializeComponent();
         }
 
@@ -45,6 +48,11 @@ namespace MapEditor
             }
             catch (FormatException) { };
            
+        }
+
+        private void editFloorTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editFloors.Show();
         }
 
     }

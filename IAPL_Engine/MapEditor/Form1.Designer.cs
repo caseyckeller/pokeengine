@@ -47,12 +47,12 @@ namespace MapEditor
             this.Scenery = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.floorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sceneryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.floorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editFloorTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sceneryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editSceneryTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -202,6 +202,24 @@ namespace MapEditor
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
             // floorsToolStripMenuItem
             // 
             this.floorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -210,6 +228,13 @@ namespace MapEditor
             this.floorsToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.floorsToolStripMenuItem.Text = "Floors";
             // 
+            // editFloorTypesToolStripMenuItem
+            // 
+            this.editFloorTypesToolStripMenuItem.Name = "editFloorTypesToolStripMenuItem";
+            this.editFloorTypesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.editFloorTypesToolStripMenuItem.Text = "Edit Floor Types";
+            this.editFloorTypesToolStripMenuItem.Click += new System.EventHandler(this.editFloorTypesToolStripMenuItem_Click);
+            // 
             // sceneryToolStripMenuItem
             // 
             this.sceneryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -217,30 +242,6 @@ namespace MapEditor
             this.sceneryToolStripMenuItem.Name = "sceneryToolStripMenuItem";
             this.sceneryToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sceneryToolStripMenuItem.Text = "Scenery";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.loadToolStripMenuItem.Text = "Load";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // editFloorTypesToolStripMenuItem
-            // 
-            this.editFloorTypesToolStripMenuItem.Name = "editFloorTypesToolStripMenuItem";
-            this.editFloorTypesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.editFloorTypesToolStripMenuItem.Text = "Edit Floor Types";
             // 
             // editSceneryTypesToolStripMenuItem
             // 

@@ -31,6 +31,7 @@ namespace IAPL.Map
         //NOT global, relative to zone only
         //global coordinate would be global X and Y plus tile x and y
 
+        public List<int> randomPokemon;
         //private Scenery scenery;
 
         public int globalX; //global X coordinate of tile [0][0]
@@ -46,6 +47,7 @@ namespace IAPL.Map
             globalY = 0;
             tile = new Tile[50, 50];
             allToDefault();
+            randomPokemon = new List<int>();
 
         }
 
@@ -58,6 +60,7 @@ namespace IAPL.Map
             globalY = 0;
             tile = new Tile[inX, inY];
             allToDefault();
+            randomPokemon = new List<int>();
 
         }
 
@@ -70,6 +73,7 @@ namespace IAPL.Map
             globalY = 0;
             tile = new Tile[inX, inY];
             allToDefault();
+            randomPokemon = new List<int>();
 
         }
 
@@ -81,6 +85,7 @@ namespace IAPL.Map
             globalY = inYCoord;
             tile = new Tile[inX, inY];
             allToDefault();
+            randomPokemon = new List<int>();
 
         }
         #endregion
@@ -129,6 +134,16 @@ namespace IAPL.Map
                 }
             }
             return xy;
+        }
+
+        public void addRandomPokemon(int pDexNo)
+        {
+            randomPokemon.Add(pDexNo);
+        }
+
+        public void removeRandomPokemon(int pDexNo)
+        {
+            randomPokemon.Remove(pDexNo);
         }
 
         /*
