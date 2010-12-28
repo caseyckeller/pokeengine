@@ -297,7 +297,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                                             ScreenHandler.Sounds.Marker_Down.Play();
                                             Input.isCooling = true;
                                             if(Input.isKeyPress(Keys.Z))
-                                                DialogBox.showDialog("Hello you crazy cats, dude this is awesome");
+                                                DialogBox.showDialog("Hello you crazy cats, dude this is awesome. I sure do like cake");
                                         }
 
                                         break;

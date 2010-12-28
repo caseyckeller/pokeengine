@@ -76,7 +76,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                 if (word != null && word != "")
                 {
                     //then if the width of the buffer plus the new word exceedes the desired width
-                    if (font.MeasureString(buffer + " " + word).X > 300)
+                    if (font.MeasureString(buffer + " " + word).X > 220)
                     {
                         //add the buffer to the correct location then clear the buffer
                         if (lineOne == "" || lineOne == null)
@@ -117,8 +117,9 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             }
             else
             {
-                remainingText += buffer; //yes, += is correct
+                remainingText = remainingText + " " + buffer; //yes, += is correct
                 buffer = "";
+                remainingText = remainingText.Trim();
             }   
             
         }

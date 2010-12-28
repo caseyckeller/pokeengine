@@ -8,7 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2010-12-28T17:15:12.3766512+08:00</Time>
+      <Time>2010-12-28T22:30:10.2735491+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title\pokemon_logo.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_logo.xnb</Output>
-      <Time>2010-12-28T17:15:11.5626047+08:00</Time>
+      <Time>2010-12-28T22:30:08.5974532+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title\pokemon_version.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_version.xnb</Output>
-      <Time>2010-12-28T17:15:11.5616046+08:00</Time>
+      <Time>2010-12-28T22:30:08.5954531+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\A\DialogueBoxA.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\DialogueBoxA.xnb</Output>
-      <Time>2010-12-28T17:15:11.7856174+08:00</Time>
+      <Time>2010-12-28T22:30:08.9904757+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\A\YesNoBoxA.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\YesNoBoxA.xnb</Output>
-      <Time>2010-12-28T17:15:11.7906177+08:00</Time>
+      <Time>2010-12-28T22:30:09.0604797+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\A\TitleMenuBoxA.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\TitleMenuBoxA.xnb</Output>
-      <Time>2010-12-28T17:15:11.7836173+08:00</Time>
+      <Time>2010-12-28T22:30:08.9884756+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\A\OptionsBoxA.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\OptionsBoxA.xnb</Output>
-      <Time>2010-12-28T17:15:11.7876175+08:00</Time>
+      <Time>2010-12-28T22:30:09.029478+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\A\GameMenuBoxA.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\GameMenuBoxA.xnb</Output>
-      <Time>2010-12-28T17:15:11.7916178+08:00</Time>
+      <Time>2010-12-28T22:30:09.0624798+08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Textboxes\Marker.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\Marker.xnb</Output>
-      <Time>2010-12-28T17:15:11.8266198+08:00</Time>
+      <Time>2010-12-28T22:30:09.2274893+08:00</Time>
     </Item>
     <Item>
       <Source>SoundEffects\Menu\marker_up.wav</Source>
@@ -89,7 +89,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_up.xnb</Output>
-      <Time>2010-12-28T22:14:49.9959122+08:00</Time>
+      <Time>2010-12-28T22:30:09.7665201+08:00</Time>
     </Item>
     <Item>
       <Source>SoundEffects\Menu\marker_down.wav</Source>
@@ -98,7 +98,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_down.xnb</Output>
-      <Time>2010-12-28T22:14:50.0019126+08:00</Time>
+      <Time>2010-12-28T22:30:09.7705203+08:00</Time>
     </Item>
     <Item>
       <Source>SoundEffects\Menu\menu_select.wav</Source>
@@ -107,7 +107,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Encylo\Documents\IAPL\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\menu_select.xnb</Output>
-      <Time>2010-12-28T22:14:49.9939121+08:00</Time>
+      <Time>2010-12-28T22:30:09.7635199+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
