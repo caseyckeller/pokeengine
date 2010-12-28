@@ -144,12 +144,45 @@ namespace IAPL_Alpha_Engine.Classes.Screens
         /// <param name="newMenu">The menu to be switched to</param>
         static public void SwitchMenu(ActiveMenu newMenu)
         {
-            if (newMenu == ActiveMenu.Title)
-                ResetAnimations();
+            switch (newMenu)
+            {
+                case ActiveMenu.Title:
+                    {
+                        ResetAnimations();
+                        ScreenHandler.Visible.TitleMenuBox = false;
+                        ScreenHandler.Visible.Marker = false;
+                        break;
+                    }
+                case ActiveMenu.Load_Game:
+                    {
+                        ScreenHandler.Visible.TitleMenuBox = false;
+                        ScreenHandler.Visible.Marker = false;
+                        break;
+                    }
+                case ActiveMenu.New_Game:
+                    {
+                        ScreenHandler.Visible.TitleMenuBox = false;
+                        ScreenHandler.Visible.Marker = false;
+                        break;
+                    }
+                case ActiveMenu.Mystery_Gift:
+                    {
+                        ScreenHandler.Visible.TitleMenuBox = false;
+                        ScreenHandler.Visible.Marker = false;
+                        break;
+                    }
+                case ActiveMenu.Options:
+                    {
+                        ScreenHandler.Visible.TitleMenuBox = false;
+                        break;
+                    }
+            }
 
 
             activeMenu = newMenu;
         }
+
+        #region TitleMenu
 
         static private void DrawTitleMenu()
         {
@@ -171,20 +204,6 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                     VersionAnimation();
                 }
             }
-        }
-
-        static private void DrawMainMenu()
-        {
-
-        }
-
-        static private void UpdateMainMenu()
-        {
-            if (mainMenuSelection > 3)
-                mainMenuSelection = 0;
-
-            if (mainMenuSelection < 0)
-                mainMenuSelection = 3;
         }
 
         static private void LogoAnimation()
@@ -226,5 +245,61 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             Rectangles.PokemonLogo = new Rectangle(320 - (Textures.PokemonLogo.Width / 2), 0 - (Textures.PokemonLogo.Height), Textures.PokemonLogo.Width, Textures.PokemonLogo.Height);
             Rectangles.Version = new Rectangle(640, (Textures.PokemonLogo.Height + 30), Textures.Version.Width, Textures.Version.Height);
         }
+
+        #endregion
+
+        #region MainMenu
+
+        static private void DrawMainMenu()
+        {
+            ScreenHandler.Visible.TitleMenuBox = true;
+            ScreenHandler.Visible.Marker = true;
+
+            spriteBatch.DrawString(font, "NEW GAME", new Vector2(58, 43), Color.Black);
+            spriteBatch.DrawString(font, "CONTINUE", new Vector2(58, 87), Color.Black);
+            spriteBatch.DrawString(font, "OPTIONS", new Vector2(58, 130), Color.Black);
+            spriteBatch.DrawString(font, "MYSTERY GIFT", new Vector2(58, 173), Color.Black);
+
+            switch (mainMenuSelection)
+            {
+                case 0:
+                    {
+                        ScreenHandler.Rectangles.Marker = new Rectangle(38, 43, ScreenHandler.Textures.Marker.Width, ScreenHandler.Textures.Marker.Height);
+                        break;
+                    }
+                case 1:
+                    {
+                        ScreenHandler.Rectangles.Marker = new Rectangle(38, 87, ScreenHandler.Textures.Marker.Width, ScreenHandler.Textures.Marker.Height);
+                        break;
+                    }
+                case 2:
+                    {
+                        ScreenHandler.Rectangles.Marker = new Rectangle(38, 130, ScreenHandler.Textures.Marker.Width, ScreenHandler.Textures.Marker.Height);
+                        break;
+                    }
+                case 3:
+                    {
+                        ScreenHandler.Rectangles.Marker = new Rectangle(38, 173, ScreenHandler.Textures.Marker.Width, ScreenHandler.Textures.Marker.Height);
+                        break;
+                    }
+            }
+        }
+
+        static private void UpdateMainMenu()
+        {
+            if (mainMenuSelection > 3)
+                mainMenuSelection = 0;
+
+            if (mainMenuSelection < 0)
+                mainMenuSelection = 3;
+        }
+
+        #endregion
+
+        #region OptionsMenu
+
+
+
+        #endregion
     }
 }

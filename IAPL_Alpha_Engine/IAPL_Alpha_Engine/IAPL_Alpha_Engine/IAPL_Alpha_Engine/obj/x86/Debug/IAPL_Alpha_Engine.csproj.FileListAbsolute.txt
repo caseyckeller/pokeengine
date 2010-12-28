@@ -1,9 +1,15 @@
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\font.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_logo.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_version.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\DialogueBoxA.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\YesNoBoxA.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\TitleMenuBoxA.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\OptionsBoxA.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\GameMenuBoxA.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\Marker.xnb
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\IAPL_Alpha_Engine.exe
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\IAPL_Alpha_Engine.pdb
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\IAPL_Alpha_Engine.exe
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\IAPL_Alpha_Engine.pdb
-C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_logo.xnb
-C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_version.xnb
