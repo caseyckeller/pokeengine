@@ -28,174 +28,32 @@ namespace IAPL_Alpha_Engine.Classes
                    isCooling = true;       <--- In Menus
              * 
              */
+
+            //you might want to change the positions of this to the switch statement, I dunno
             if (DialogBox.isVisible)
             {
                 DialogBox.HandleInput();
             }
-
-            switch (ScreenHandler.activeScreen)
+            else
             {
-                case ScreenHandler.ActiveScreen.Title:
-                    {
-                        if (!DialogBox.isVisible) //dialog box rules all, mwahahahaha
+                switch (ScreenHandler.activeScreen)
+                {
+                    case ScreenHandler.ActiveScreen.Title:
                         {
                             TitleScreen.HandleKeys();
+                            break;
                         }
-                        else
+                    case ScreenHandler.ActiveScreen.Game:
                         {
-                            switch (TitleScreen.activeMenu)
-                            {
-                                case TitleScreen.ActiveMenu.Title:
-                                    {
-
-                                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Z))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
-                                            coolDown = cooldownMax;
-                                            ScreenHandler.Sounds.Menu_Select.Play();
-                                            isCooling = true;
-                                        }
-
-                                        
-
-                                        break;
-                                    }
-                                case TitleScreen.ActiveMenu.New_Game:
-                                    {
-                                        if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
-                                            coolDown = cooldownMax;
-                                            isCooling = true;
-                                        }
-
-                                        break;
-                                    }
-                                case TitleScreen.ActiveMenu.Load_Game:
-                                    {
-                                        if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
-                                            coolDown = cooldownMax;
-                                            isCooling = true;
-                                        }
-
-                                        break;
-                                    }
-                                case TitleScreen.ActiveMenu.Options:
-                                    {
-                                        if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
-                                            coolDown = cooldownMax;
-                                            isCooling = true;
-                                        }
-
-
-                                        break;
-                                    }
-                                case TitleScreen.ActiveMenu.Main_Menu:
-                                    {
-                                        if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
-                                            coolDown = cooldownMax;
-                                            isCooling = true;
-                                        }
-
-                                        if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                                        {
-                                            TitleScreen.mainMenuSelection--;
-                                            coolDown = cooldownMax;
-                                            ScreenHandler.Sounds.Marker_Up.Play();
-                                            isCooling = true;
-                                        }
-
-                                        if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                                        {
-                                            TitleScreen.mainMenuSelection++;
-                                            coolDown = cooldownMax;
-                                            ScreenHandler.Sounds.Marker_Down.Play();
-                                            isCooling = true;
-                                        }
-
-                                        switch (TitleScreen.mainMenuSelection)
-                                        {
-                                            case 0:
-                                                {
-                                                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Z))
-                                                    {
-                                                        TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.New_Game);
-                                                        coolDown = cooldownMax;
-                                                        ScreenHandler.Sounds.Menu_Select.Play();
-                                                        isCooling = true;
-                                                    }
-
-                                                    break;
-                                                }
-                                            case 1:
-                                                {
-                                                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Z))
-                                                    {
-                                                        TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Load_Game);
-                                                        coolDown = cooldownMax;
-                                                        ScreenHandler.Sounds.Menu_Select.Play();
-                                                        isCooling = true;
-                                                    }
-                                                    break;
-                                                }
-                                            case 2:
-                                                {
-                                                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Z))
-                                                    {
-                                                        TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Options);
-                                                        coolDown = cooldownMax;
-                                                        ScreenHandler.Sounds.Menu_Select.Play();
-                                                        isCooling = true;
-                                                    }
-                                                    break;
-                                                }
-                                            case 3:
-                                                {
-                                                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Z))
-                                                    {
-                                                        TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Mystery_Gift);
-                                                        coolDown = cooldownMax;
-                                                        ScreenHandler.Sounds.Menu_Select.Play();
-                                                        isCooling = true;
-                                                    }
-                                                    break;
-                                                }
-                                        }
-
-                                        break;
-                                    }
-                                case TitleScreen.ActiveMenu.Mystery_Gift:
-                                    {
-                                        if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
-                                        {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
-                                            coolDown = cooldownMax;
-                                            isCooling = true;
-                                        }
-
-                                        break;
-                                    }
-                            }
+                            //TODO add this
+                            break;
                         }
-                        break;
-                    }
-                case ScreenHandler.ActiveScreen.Game:
-                    {
-                        //TODO add this
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
+                    default:
+                        {
+                            break;
+                        }
+                }
             }
-            //you might want to change the positions of this to the switch statement, I dunno
         }
 
         public static void updateState()

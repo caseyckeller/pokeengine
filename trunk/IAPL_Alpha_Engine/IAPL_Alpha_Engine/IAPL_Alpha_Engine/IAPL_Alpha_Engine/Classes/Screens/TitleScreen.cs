@@ -215,6 +215,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -228,6 +229,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -239,6 +241,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -250,6 +253,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -262,6 +266,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -269,6 +274,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.mainMenuSelection--;
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -276,6 +282,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                             {
                                 TitleScreen.mainMenuSelection++;
                                 Input.coolDown = Input.cooldownMax;
+                                ScreenHandler.Sounds.Marker_Down.Play();
                                 Input.isCooling = true;
                             }
 
@@ -287,6 +294,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                                         {
                                             TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.New_Game);
                                             Input.coolDown = Input.cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Down.Play();
                                             Input.isCooling = true;
                                             if(Input.isKeyPress(Keys.Z))
                                                 DialogBox.showDialog("Hello you crazy cats, dude this is awesome");
@@ -300,6 +308,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                                         {
                                             TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Load_Game);
                                             Input.coolDown = Input.cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Down.Play();
                                             Input.isCooling = true;
                                         }
                                         break;
@@ -310,6 +319,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                                         {
                                             TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Options);
                                             Input.coolDown = Input.cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Down.Play();
                                             Input.isCooling = true;
                                         }
                                         break;
@@ -320,6 +330,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                                         {
                                             TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Mystery_Gift);
                                             Input.coolDown = Input.cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Down.Play();
                                             Input.isCooling = true;
                                         }
                                         break;
