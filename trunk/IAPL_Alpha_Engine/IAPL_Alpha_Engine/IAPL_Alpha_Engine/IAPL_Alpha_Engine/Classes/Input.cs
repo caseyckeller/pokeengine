@@ -22,6 +22,8 @@ namespace IAPL_Alpha_Engine.Classes
              * 
              * if (Keyboard.GetState().IsKeyDown(Keys.Enter))
              *     do_logic;
+             *     coolDown = cooldownMax; <---
+                   isCooling = true;       <--- In Menus
              * 
              */
 
@@ -58,7 +60,7 @@ namespace IAPL_Alpha_Engine.Classes
                                     {
                                         if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
                                         {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                             coolDown = cooldownMax;
                                             isCooling = true;
                                         }
@@ -69,7 +71,7 @@ namespace IAPL_Alpha_Engine.Classes
                                     {
                                         if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
                                         {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                             coolDown = cooldownMax;
                                             isCooling = true;
                                         }
@@ -80,7 +82,7 @@ namespace IAPL_Alpha_Engine.Classes
                                     {
                                         if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
                                         {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                             coolDown = cooldownMax;
                                             isCooling = true;
                                         }
@@ -162,7 +164,7 @@ namespace IAPL_Alpha_Engine.Classes
                                     {
                                         if (Keyboard.GetState().IsKeyDown(Keys.RightShift) || Keyboard.GetState().IsKeyDown(Keys.X))
                                         {
-                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                             coolDown = cooldownMax;
                                             isCooling = true;
                                         }

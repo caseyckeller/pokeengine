@@ -28,6 +28,60 @@
       <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_version.xnb</Output>
       <Time>2010-12-27T20:29:59.7338-08:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\Textboxes\A\DialogueBoxA.png</Source>
+      <Name>Textures\Textboxes\A\DialogueBoxA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\DialogueBoxA.xnb</Output>
+      <Time>2010-12-27T22:39:56.6458-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Textboxes\A\YesNoBoxA.png</Source>
+      <Name>Textures\Textboxes\A\YesNoBoxA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\YesNoBoxA.xnb</Output>
+      <Time>2010-12-27T22:46:08.9238-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Textboxes\A\TitleMenuBoxA.png</Source>
+      <Name>Textures\Textboxes\A\TitleMenuBoxA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\TitleMenuBoxA.xnb</Output>
+      <Time>2010-12-27T22:55:46.2478-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Textboxes\A\OptionsBoxA.png</Source>
+      <Name>Textures\Textboxes\A\OptionsBoxA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\OptionsBoxA.xnb</Output>
+      <Time>2010-12-27T23:00:22.8188-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Textboxes\A\GameMenuBoxA.png</Source>
+      <Name>Textures\Textboxes\A\GameMenuBoxA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\A\GameMenuBoxA.xnb</Output>
+      <Time>2010-12-27T23:02:56.0128-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Textboxes\Marker.png</Source>
+      <Name>Textures\Textboxes\Marker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\Marker.xnb</Output>
+      <Time>2010-12-27T23:35:19.0028-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
