@@ -8,24 +8,24 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2010-12-27T18:20:40.3908-08:00</Time>
+      <Time>2010-12-27T21:57:09.6728-08:00</Time>
     </Item>
     <Item>
-      <Source>Title\pokemon_logo.png</Source>
-      <Name>Title\pokemon_logo</Name>
+      <Source>Textures\Title\pokemon_logo.png</Source>
+      <Name>Textures\Title\pokemon_logo</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Title\pokemon_logo.xnb</Output>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_logo.xnb</Output>
       <Time>2010-12-27T19:32:57.0538-08:00</Time>
     </Item>
     <Item>
-      <Source>Title\pokemon_version.png</Source>
-      <Name>Title\pokemon_version</Name>
+      <Source>Textures\Title\pokemon_version.png</Source>
+      <Name>Textures\Title\pokemon_version</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Title\pokemon_version.xnb</Output>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Title\pokemon_version.xnb</Output>
       <Time>2010-12-27T20:29:59.7338-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>

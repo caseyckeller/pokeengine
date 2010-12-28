@@ -102,6 +102,12 @@ namespace IAPL_Alpha_Engine
 
             ScreenHandler.Draw();
 
+            spriteBatch.DrawString(font, "CurrentScreen: " + ScreenHandler.activeScreen.ToString(), new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(font, "Screen Menu: " + TitleScreen.activeMenu.ToString(), new Vector2(0, 30), Color.White);
+            spriteBatch.DrawString(font, "Main_Menu Selection: " + TitleScreen.mainMenuSelection.ToString(), new Vector2(0, 60), Color.White);
+            spriteBatch.DrawString(font, "Key is cooling: " + Input.isCooling.ToString(), new Vector2(0, 90), Color.White);
+            spriteBatch.DrawString(font, "Key cooldown: " + Input.coolDown.ToString(), new Vector2(0, 120), Color.White);
+
             spriteBatch.End();
 
             // TODO: Add your drawing code here
