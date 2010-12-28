@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -185,6 +186,161 @@ namespace IAPL_Alpha_Engine.Classes.Screens
 
 
             activeMenu = newMenu;
+        }
+
+        /// <summary>
+        /// Handles keystrokes for the title menu
+        /// </summary>
+        /// <param name="isCooling"></param>
+        /// <param name="coolDown"></param>
+        /// <param name="cooldownMax"></param>
+        public static void HandleKeys()
+        {
+            /*
+            if (Input.isCooling)
+            {
+                Input.coolDown--;
+
+                if (Input.coolDown <= 0)
+                    Input.isCooling = false;
+            }
+            else
+            {*/
+                switch (TitleScreen.activeMenu)
+                {
+                    case TitleScreen.ActiveMenu.Title:
+                        {
+
+                            if (Input.isKeyPress(Keys.Enter) || Input.isKeyPress(Keys.Z))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+
+
+                            break;
+                        }
+                    case TitleScreen.ActiveMenu.New_Game:
+                        {
+                            if (Input.isKeyPress(Keys.RightShift) || Input.isKeyPress(Keys.X))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            break;
+                        }
+                    case TitleScreen.ActiveMenu.Load_Game:
+                        {
+                            if (Input.isKeyPress(Keys.RightShift) || Input.isKeyPress(Keys.X))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            break;
+                        }
+                    case TitleScreen.ActiveMenu.Options:
+                        {
+                            if (Input.isKeyPress(Keys.RightShift) || Input.isKeyPress(Keys.X))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+
+                            break;
+                        }
+                    case TitleScreen.ActiveMenu.Main_Menu:
+                        {
+                            if (Input.isKeyPress(Keys.RightShift) || Input.isKeyPress(Keys.X))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Title);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            if (Input.isKeyPress(Keys.Up))
+                            {
+                                TitleScreen.mainMenuSelection--;
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            if (Input.isKeyPress(Keys.Down))
+                            {
+                                TitleScreen.mainMenuSelection++;
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            switch (TitleScreen.mainMenuSelection)
+                            {
+                                case 0:
+                                    {
+                                        if (Input.isKeyPress(Keys.Z) || Input.isKeyPress(Keys.Enter))
+                                        {
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.New_Game);
+                                            Input.coolDown = Input.cooldownMax;
+                                            Input.isCooling = true;
+                                            if(Input.isKeyPress(Keys.Z))
+                                                DialogBox.showDialog("Hello you crazy cats, dude this is awesome");
+                                        }
+
+                                        break;
+                                    }
+                                case 1:
+                                    {
+                                        if (Input.isKeyPress(Keys.Enter) || Input.isKeyPress(Keys.Z))
+                                        {
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Load_Game);
+                                            Input.coolDown = Input.cooldownMax;
+                                            Input.isCooling = true;
+                                        }
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        if (Input.isKeyPress(Keys.Enter) || Input.isKeyPress(Keys.Z))
+                                        {
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Options);
+                                            Input.coolDown = Input.cooldownMax;
+                                            Input.isCooling = true;
+                                        }
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        if (Input.isKeyPress(Keys.Enter) || Input.isKeyPress(Keys.Z))
+                                        {
+                                            TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Mystery_Gift);
+                                            Input.coolDown = Input.cooldownMax;
+                                            Input.isCooling = true;
+                                        }
+                                        break;
+                                    }
+                            }
+
+                            break;
+                        }
+                    case TitleScreen.ActiveMenu.Mystery_Gift:
+                        {
+                            if (Input.isKeyPress(Keys.RightShift) || Input.isKeyPress(Keys.X))
+                            {
+                                TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
+                                Input.coolDown = Input.cooldownMax;
+                                Input.isCooling = true;
+                            }
+
+                            break;
+                        }
+                }
+            //}
         }
 
         #region TitleMenu

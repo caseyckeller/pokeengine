@@ -10,33 +10,36 @@ namespace IAPL_Alpha_Engine.Classes
 {
     static class Input
     {
-
+        public static KeyboardState oldState = new KeyboardState();
+        public static KeyboardState newState = new KeyboardState();
         public static int cooldownMax = 10;
         public static int coolDown = 0;
         public static bool isCooling = false;
 
         public static void ProcessKeys()
         {
+            Input.updateState();
             /*
              * Example input checks:
              * 
-             * if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+             * if (Input.isKeyPress(Keys.Enter))
              *     do_logic;
              *     coolDown = cooldownMax; <---
                    isCooling = true;       <--- In Menus
              * 
              */
+            if (DialogBox.isVisible)
+            {
+                DialogBox.HandleInput();
+            }
 
             switch (ScreenHandler.activeScreen)
             {
                 case ScreenHandler.ActiveScreen.Title:
                     {
-                        if (isCooling)
+                        if (!DialogBox.isVisible) //dialog box rules all, mwahahahaha
                         {
-                            coolDown--;
-
-                            if (coolDown <= 0)
-                                isCooling = false;
+                            TitleScreen.HandleKeys();
                         }
                         else
                         {
@@ -184,10 +187,31 @@ namespace IAPL_Alpha_Engine.Classes
                     }
                 case ScreenHandler.ActiveScreen.Game:
                     {
-
+                        //TODO add this
+                        break;
+                    }
+                default:
+                    {
                         break;
                     }
             }
+            //you might want to change the positions of this to the switch statement, I dunno
+        }
+
+        public static void updateState()
+        {
+            oldState = newState;
+            newState = Keyboard.GetState();
+        }
+
+        public static bool isKeyPress(Keys theKey)
+        {
+            bool isPress = false;
+            if (newState.IsKeyUp(theKey) && oldState.IsKeyDown(theKey))
+            {
+                isPress = true;
+            }
+            return isPress;
         }
 
     }

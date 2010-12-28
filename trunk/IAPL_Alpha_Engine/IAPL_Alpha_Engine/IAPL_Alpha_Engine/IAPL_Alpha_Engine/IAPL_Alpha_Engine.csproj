@@ -113,6 +113,7 @@
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\PokemonInventory.cs" />
     <Compile Include="Classes\Screens\GameScreen.cs" />
+    <Compile Include="Classes\Screens\DialogBox.cs" />
     <Compile Include="Classes\Screens\Menu\InventoryScreen.cs" />
     <Compile Include="Classes\Screens\Menu\MenuScreen.cs" />
     <Compile Include="Classes\Screens\Menu\OptionScreen.cs" />
