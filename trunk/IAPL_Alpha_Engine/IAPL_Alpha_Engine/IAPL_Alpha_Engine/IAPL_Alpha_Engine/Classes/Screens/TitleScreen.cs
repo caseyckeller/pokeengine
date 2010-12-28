@@ -11,24 +11,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
 {
     static class TitleScreen
     {
-
-        static GraphicsDeviceManager graphics;
-        static SpriteBatch spriteBatch;
-        static ContentManager content;
-        static SpriteFont font;
-
-        public static ActiveMenu activeMenu { get; set; }
-
-        public enum ActiveMenu { Title, Main_Menu, New_Game, Load_Game, Options }
-
-        private static bool logoAnimated;
-        private static int logoAnimationNumber;
-        private static bool animateVersion;
-        private static bool versionAnimated;
-        private static int versionAnimationNumber;
-
-        private static double screenWidth = 640.0;
-
+        #region Structs
         public struct Textures
         {
             /*
@@ -56,6 +39,48 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             public static Rectangle Version;
         }
 
+        public struct Options
+        {
+            /// <summary>
+            /// 0 = Fast, 1 = Medium, 2 = Slow
+            /// </summary>
+            public static byte TextSpeed = 0;
+
+            /// <summary>
+            /// 0 = Shift, 1 = Set
+            /// </summary>
+            public static byte BattleStyle = 0;
+
+            /// <summary>
+            /// 0 = Text Speed, 1 = Battle Style, 3 = Cancel
+            /// </summary>
+            public static byte SubMenu = 0;
+        }
+        #endregion
+
+        #region Fields
+        static GraphicsDeviceManager graphics;
+        static SpriteBatch spriteBatch;
+        static ContentManager content;
+        static SpriteFont font;
+
+        public static ActiveMenu activeMenu { get; set; }
+
+        public enum ActiveMenu { Title, Main_Menu, New_Game, Load_Game, Options, Mystery_Gift }
+
+        /// <summary>
+        /// 0 = New Game, 1 = Load Game, 2 = Options, 3 = Mystery Gift
+        /// </summary>
+        public static int mainMenuSelection = 0;
+
+        private static bool logoAnimated;
+        private static int logoAnimationNumber;
+        private static bool animateVersion;
+        private static bool versionAnimated;
+        private static int versionAnimationNumber;
+        #endregion
+
+
         static public void Initialize(GraphicsDeviceManager g, SpriteBatch s, ContentManager c, SpriteFont f)
         {
             graphics = g;
@@ -64,12 +89,6 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             font = f;
 
             activeMenu = ActiveMenu.Title;
-            logoAnimated = false;
-            logoAnimationNumber = 120;
-
-            animateVersion = false;
-            versionAnimated = false;
-            versionAnimationNumber = 120;
         }
 
         static public void LoadContent()
@@ -84,9 +103,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             Textures.PokemonLogo = content.Load<Texture2D>(@"Textures\Title\pokemon_logo");
             Textures.Version = content.Load<Texture2D>(@"Textures\Title\pokemon_version");
 
-            Rectangles.PokemonLogo = new Rectangle(320 - (Textures.PokemonLogo.Width / 2), 0 - (Textures.PokemonLogo.Height), Textures.PokemonLogo.Width, Textures.PokemonLogo.Height);
-            Rectangles.Version = new Rectangle(640, (Textures.PokemonLogo.Height + 30), Textures.Version.Width, Textures.Version.Height);
-
+            ResetAnimations();
         }
 
         /// <summary>
@@ -98,6 +115,9 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             {
                 case ActiveMenu.Title:
                     UpdateTitleMenu();
+                    break;
+                case ActiveMenu.Main_Menu:
+                    UpdateMainMenu();
                     break;
             }
         }
@@ -112,6 +132,9 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                 case ActiveMenu.Title:
                     DrawTitleMenu();
                     break;
+                case ActiveMenu.Main_Menu:
+                    DrawMainMenu();
+                    break;
             }
         }
 
@@ -121,6 +144,10 @@ namespace IAPL_Alpha_Engine.Classes.Screens
         /// <param name="newMenu">The menu to be switched to</param>
         static public void SwitchMenu(ActiveMenu newMenu)
         {
+            if (newMenu == ActiveMenu.Title)
+                ResetAnimations();
+
+
             activeMenu = newMenu;
         }
 
@@ -144,6 +171,20 @@ namespace IAPL_Alpha_Engine.Classes.Screens
                     VersionAnimation();
                 }
             }
+        }
+
+        static private void DrawMainMenu()
+        {
+
+        }
+
+        static private void UpdateMainMenu()
+        {
+            if (mainMenuSelection > 3)
+                mainMenuSelection = 0;
+
+            if (mainMenuSelection < 0)
+                mainMenuSelection = 3;
         }
 
         static private void LogoAnimation()
@@ -171,6 +212,19 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             {
                 versionAnimated = true;
             }
+        }
+
+        static private void ResetAnimations()
+        {
+            logoAnimated = false;
+            logoAnimationNumber = 120;
+
+            animateVersion = false;
+            versionAnimated = false;
+            versionAnimationNumber = 120;
+
+            Rectangles.PokemonLogo = new Rectangle(320 - (Textures.PokemonLogo.Width / 2), 0 - (Textures.PokemonLogo.Height), Textures.PokemonLogo.Width, Textures.PokemonLogo.Height);
+            Rectangles.Version = new Rectangle(640, (Textures.PokemonLogo.Height + 30), Textures.Version.Width, Textures.Version.Height);
         }
     }
 }
