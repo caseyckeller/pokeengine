@@ -39,6 +39,11 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             public static Rectangle Version;
         }
 
+        public struct Sounds
+        {
+
+        }
+
         public struct Options
         {
             /// <summary>

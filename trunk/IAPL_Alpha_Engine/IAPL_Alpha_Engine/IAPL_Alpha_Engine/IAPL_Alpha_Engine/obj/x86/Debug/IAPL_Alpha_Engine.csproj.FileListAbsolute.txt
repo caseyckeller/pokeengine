@@ -13,3 +13,6 @@ C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_E
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\IAPL_Alpha_Engine.exe
 C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\obj\x86\Debug\IAPL_Alpha_Engine.pdb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_up.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_down.xnb
+C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\menu_select.xnb

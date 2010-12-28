@@ -7,3 +7,6 @@ Content\Textures\Textboxes\A\TitleMenuBoxA.xnb
 Content\Textures\Textboxes\A\OptionsBoxA.xnb
 Content\Textures\Textboxes\A\GameMenuBoxA.xnb
 Content\Textures\Textboxes\Marker.xnb
+Content\SoundEffects\Menu\marker_up.xnb
+Content\SoundEffects\Menu\marker_down.xnb
+Content\SoundEffects\Menu\menu_select.xnb

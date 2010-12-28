@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace IAPL_Alpha_Engine.Classes.Screens
 {
@@ -43,6 +44,13 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             public static bool TitleMenuBox = false;
 
             public static bool Marker = false;
+        }
+
+        public struct Sounds
+        {
+            public static SoundEffect Marker_Up;
+            public static SoundEffect Marker_Down;
+            public static SoundEffect Menu_Select;
         }
 
         static GraphicsDeviceManager graphics;
@@ -91,6 +99,10 @@ namespace IAPL_Alpha_Engine.Classes.Screens
             Textures.TitleMenuBox = content.Load<Texture2D>(@"Textures\Textboxes\A\TitleMenuBoxA");
 
             Textures.Marker = content.Load<Texture2D>(@"Textures\Textboxes\Marker");
+
+            Sounds.Marker_Up = content.Load<SoundEffect>(@"SoundEffects\Menu\marker_up");
+            Sounds.Marker_Down = content.Load<SoundEffect>(@"SoundEffects\Menu\marker_down");
+            Sounds.Menu_Select = content.Load<SoundEffect>(@"SoundEffects\Menu\menu_select");
         }
 
         /// <summary>
