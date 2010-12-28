@@ -81,7 +81,7 @@ namespace IAPL_Alpha_Engine
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            //required to detect key presses
             Input.ProcessKeys();
 
             ScreenHandler.Update();
@@ -89,6 +89,7 @@ namespace IAPL_Alpha_Engine
             // TODO: Add your update logic here
 
             base.Update(gameTime);
+
         }
 
         /// <summary>

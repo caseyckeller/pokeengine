@@ -84,6 +84,7 @@ namespace IAPL_Alpha_Engine.Classes.Screens
 
             activeScreen = ActiveScreen.Title;
             TitleScreen.Initialize(g,s,c,f);
+            DialogBox.Initialize(g,s,c,f);
             TitleScreen.LoadContent();
         }
 
@@ -127,8 +128,8 @@ namespace IAPL_Alpha_Engine.Classes.Screens
         /// </summary>
         static public void Draw()
         {
-            if(Visible.DialogueBox)
-                spriteBatch.Draw(ScreenHandler.Textures.DialogueBox, ScreenHandler.Rectangles.DialogueBox, Color.White);
+            if (DialogBox.isVisible)
+                DialogBox.Draw();
             if (Visible.YesNoBox)
                 spriteBatch.Draw(ScreenHandler.Textures.YesNoBox, ScreenHandler.Rectangles.YesNoBox, Color.White);
             if (Visible.OptionsBox)
