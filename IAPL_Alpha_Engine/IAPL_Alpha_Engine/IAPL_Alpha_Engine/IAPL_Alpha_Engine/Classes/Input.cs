@@ -49,6 +49,7 @@ namespace IAPL_Alpha_Engine.Classes
                                         {
                                             TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Main_Menu);
                                             coolDown = cooldownMax;
+                                            ScreenHandler.Sounds.Menu_Select.Play();
                                             isCooling = true;
                                         }
 
@@ -103,6 +104,7 @@ namespace IAPL_Alpha_Engine.Classes
                                         {
                                             TitleScreen.mainMenuSelection--;
                                             coolDown = cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Up.Play();
                                             isCooling = true;
                                         }
 
@@ -110,6 +112,7 @@ namespace IAPL_Alpha_Engine.Classes
                                         {
                                             TitleScreen.mainMenuSelection++;
                                             coolDown = cooldownMax;
+                                            ScreenHandler.Sounds.Marker_Down.Play();
                                             isCooling = true;
                                         }
 
@@ -121,6 +124,7 @@ namespace IAPL_Alpha_Engine.Classes
                                                     {
                                                         TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.New_Game);
                                                         coolDown = cooldownMax;
+                                                        ScreenHandler.Sounds.Menu_Select.Play();
                                                         isCooling = true;
                                                     }
 
@@ -132,6 +136,7 @@ namespace IAPL_Alpha_Engine.Classes
                                                     {
                                                         TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Load_Game);
                                                         coolDown = cooldownMax;
+                                                        ScreenHandler.Sounds.Menu_Select.Play();
                                                         isCooling = true;
                                                     }
                                                     break;
@@ -142,6 +147,7 @@ namespace IAPL_Alpha_Engine.Classes
                                                     {
                                                         TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Options);
                                                         coolDown = cooldownMax;
+                                                        ScreenHandler.Sounds.Menu_Select.Play();
                                                         isCooling = true;
                                                     }
                                                     break;
@@ -152,6 +158,7 @@ namespace IAPL_Alpha_Engine.Classes
                                                     {
                                                         TitleScreen.SwitchMenu(TitleScreen.ActiveMenu.Mystery_Gift);
                                                         coolDown = cooldownMax;
+                                                        ScreenHandler.Sounds.Menu_Select.Play();
                                                         isCooling = true;
                                                     }
                                                     break;

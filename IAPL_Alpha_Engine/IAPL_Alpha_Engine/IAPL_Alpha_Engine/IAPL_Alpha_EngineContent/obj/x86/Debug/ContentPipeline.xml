@@ -82,6 +82,33 @@
       <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\Textures\Textboxes\Marker.xnb</Output>
       <Time>2010-12-27T23:35:19.0028-08:00</Time>
     </Item>
+    <Item>
+      <Source>SoundEffects\Menu\marker_up.wav</Source>
+      <Name>SoundEffects\Menu\marker_up</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_up.xnb</Output>
+      <Time>2010-12-28T02:29:33.5228-08:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\Menu\marker_down.wav</Source>
+      <Name>SoundEffects\Menu\marker_down</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\marker_down.xnb</Output>
+      <Time>2010-12-28T02:29:40.7938-08:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\Menu\menu_select.wav</Source>
+      <Name>SoundEffects\Menu\menu_select</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tim\Desktop\pokeengine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\IAPL_Alpha_Engine\bin\x86\Debug\Content\SoundEffects\Menu\menu_select.xnb</Output>
+      <Time>2010-12-28T02:29:45.8128-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
