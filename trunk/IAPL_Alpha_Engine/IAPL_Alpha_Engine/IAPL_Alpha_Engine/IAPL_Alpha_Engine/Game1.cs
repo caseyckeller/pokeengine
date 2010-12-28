@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using IAPL_Alpha_Engine.Classes.Screens;
 using IAPL_Alpha_Engine.Classes;
 
 namespace IAPL_Alpha_Engine
@@ -19,6 +20,7 @@ namespace IAPL_Alpha_Engine
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteFont font;
 
         public Game1()
         {
@@ -36,6 +38,10 @@ namespace IAPL_Alpha_Engine
         {
             // TODO: Add your initialization logic here
 
+            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 640;
+            graphics.ApplyChanges();
+
             base.Initialize();
         }
 
@@ -48,7 +54,9 @@ namespace IAPL_Alpha_Engine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Classes.Screens.ScreenHandler.Initialize(graphics, spriteBatch, Content);
+            font = Content.Load<SpriteFont>("font");
+
+            ScreenHandler.Initialize(graphics, spriteBatch, Content, font);
 
             // TODO: use this.Content to load your game content here
         }
@@ -73,6 +81,10 @@ namespace IAPL_Alpha_Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            Input.ProcessKeys();
+
+            ScreenHandler.Update();
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -84,7 +96,13 @@ namespace IAPL_Alpha_Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
+
+            spriteBatch.Begin();
+
+            ScreenHandler.Draw();
+
+            spriteBatch.End();
 
             // TODO: Add your drawing code here
 

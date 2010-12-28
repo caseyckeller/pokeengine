@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Input.cs" />
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Player.cs" />
