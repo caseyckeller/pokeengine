@@ -1,7 +1,0 @@
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\bin\Release\music_dll.dll
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\bin\Release\music_dll.pdb
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\obj\Release\Interop.WMPLib.dll
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\obj\Release\music_dll.csproj.ResolveComReference.cache
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\obj\Release\music_dll.dll
-C:\Users\Brenden\Documents\Visual Studio 2010\Projects\music_dll\music_dll\obj\Release\music_dll.pdb
