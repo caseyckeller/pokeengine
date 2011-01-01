@@ -1,5 +1,0 @@
-C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\bin\Release\IAPL.exe
-C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\bin\Release\IAPL.pdb
-C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Release\ResolveAssemblyReference.cache
-C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Release\IAPL.exe
-C:\Users\Encylo\Documents\IAPL\Core\Battle System\battle\obj\x86\Release\IAPL.pdb
