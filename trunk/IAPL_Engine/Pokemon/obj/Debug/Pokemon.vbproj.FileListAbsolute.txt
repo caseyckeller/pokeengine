@@ -1,0 +1,10 @@
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\bin\Debug\Pokemon.dll
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\bin\Debug\Pokemon.pdb
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\bin\Debug\Pokemon.xml
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\Pokemon.Resources.resources
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\Pokemon.dll
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\Pokemon.xml
+C:\Users\Brenden\IAPL\IAPL_Engine\Pokemon\obj\Debug\Pokemon.pdb
