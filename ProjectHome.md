@@ -1,0 +1,1 @@
+An Open Source Pokémon game engine created specifically for the International Association of Pokémon Leagues project written in C# and XNA 4.0
